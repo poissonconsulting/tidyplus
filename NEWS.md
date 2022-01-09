@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9003
+
+- Added `add_missing_column()`.
+
+
 # tidyplus 0.0.0.9002
 
 - Added `if_else2()` with only two options.

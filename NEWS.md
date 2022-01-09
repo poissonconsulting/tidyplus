@@ -1,5 +1,11 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9004
+
+- Added `str_detect2()`.
+- Added `coalesce_data()`.
+
+
 # tidyplus 0.0.0.9003
 
 - Added `add_missing_column()`.

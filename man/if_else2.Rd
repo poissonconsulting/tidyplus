@@ -35,14 +35,12 @@ data <- tibble::tibble(
   y = c("x is false", NA, "hello"))
   
 # with a single vector if_else2 behaves the same as the default call to if_else.
-data |>
-  dplyr::mutate(
+dplyr::mutate(data,
     y1 = dplyr::if_else(y != "x is false", "x is true", y),
     y2 = dplyr::if_else(y != "x is false", "x is true", y))
 
 # however in the case of a second vector if_else2 does not introduce missing values
-data |>
-  dplyr::mutate(
+dplyr::mutate(data,
     x1 = dplyr::if_else(y == "x is false", FALSE, x),
     x2 = if_else2(y == "x is false", FALSE, x))
 }

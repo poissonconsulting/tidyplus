@@ -11,6 +11,7 @@ Authors@R:
              role = c("cph", "fnd")))
 Description: Provides functions that complement those in the 'tidyverse'.
 License: MIT + file LICENSE
+Depends: R (>= 3.6)
 Imports:
     dplyr,
     stringi,

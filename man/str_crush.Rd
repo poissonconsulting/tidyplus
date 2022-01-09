@@ -9,8 +9,11 @@ str_crush(string)
 \arguments{
 \item{string}{A character vector.}
 }
+\value{
+A character vector.
+}
 \description{
-\code{str_crush()}, removes all whitespace from a string,
+\code{str_crush()}, which removes all whitespace from a string,
 is the logical extension to \code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_trim]{stringr::str_squish()}}.
 }
 \details{
@@ -18,4 +21,7 @@ is the logical extension to \code{\link[stringr:str_trim]{stringr::str_trim()}} 
 }
 \examples{
 str_crush("  String with trailing,  middle, and leading white space\t")
+}
+\seealso{
+\code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_trim]{stringr::str_squish()}}
 }

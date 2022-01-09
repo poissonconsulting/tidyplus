@@ -1,6 +1,6 @@
 Package: tidyplus
 Title: Additional tidyverse functions
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     c(person(given = "Joe",
              family = "Thorley",

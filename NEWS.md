@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9002
+
+- Added `if_else2()` with only two options.
+
+
 # tidyplus 0.0.0.9001
 
 - Added `str_crush()` to remove all whitespace from a string.

@@ -12,9 +12,11 @@ Authors@R:
 Description: Provides functions that complement those in the 'tidyverse'.
 License: MIT + file LICENSE
 Imports:
+    dplyr,
     stringi,
     stringr
 Suggests: 
+    tibble,
     covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

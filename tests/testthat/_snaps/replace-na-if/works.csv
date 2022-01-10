@@ -1,0 +1,5 @@
+x,y,x2
+TRUE,x is false,TRUE
+FALSE,NA,FALSE
+NA,x is false,FALSE
+FALSE,x is false,FALSE

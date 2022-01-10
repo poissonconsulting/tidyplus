@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9006
+
+- Added `unite_str()` to manipulate comments.
+
+
 # tidyplus 0.0.0.9005
 
 - Added `only()`.

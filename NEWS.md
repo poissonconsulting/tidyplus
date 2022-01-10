@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9007
+
+- Added `replace_na_if()` to conditionally replace missing values.
+
+
 # tidyplus 0.0.0.9006
 
 - Added `unite_str()` to manipulate comments.

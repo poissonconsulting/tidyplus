@@ -17,9 +17,12 @@ Imports:
     dplyr,
     rlang,
     stringi,
-    stringr
+    stringr,
+    tidyselect,
+    tidyr,
 Suggests: 
     covr,
+    readr,
     sf,
     testthat (>= 3.0.0),
     tibble

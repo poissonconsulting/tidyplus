@@ -19,7 +19,7 @@
 #' add_missing_column(data, z = -1:1, .before = "y")
 #' 
 #' # add_column errors if already present
-#' try(add_column(data, x = 4:6))
+#' try(tibble::add_column(data, x = 4:6))
 #' 
 #' # add_missing_column silently ignores
 #' add_missing_column(data, x = 4:6)

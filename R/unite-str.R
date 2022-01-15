@@ -20,7 +20,7 @@ unite_str <- function (data, col, ..., sep = ". ", remove = TRUE)
     from_vars <- tidyselect::eval_select(rlang::expr(c(...)), data)
   }
   data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(from_vars), na_if_blank))
-  data <- tidyr::unite(data, !!col, ..., sep = sep, remove = remove, na.rm = TRUE)
+  data <- tidyr::unite(data, col = !!col, ..., sep = sep, remove = remove, na.rm = TRUE)
   data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(col), na_if_blank))
   data
 }

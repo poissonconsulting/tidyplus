@@ -1,6 +1,15 @@
-test_that("unite_str works", {
+test_that("unite_str works character", {
   data <- tibble::tibble(x = c("good", "Saw fish.", NA), y = c("2021", NA, NA))
   data <- unite_str(data, "new", x, y)
+  expect_s3_class(data, "tbl_df")
+  expect_identical(colnames(data), "new")
+  expect_identical(data$new, c("good. 2021", "Saw fish.", NA))
+})
+
+test_that("unite_str works symbol", {
+  data <- tibble::tibble(x = c("good", "Saw fish.", NA), y = c("2021", NA, NA))
+  skip("get unite_str working with symbol!")
+  data <- unite_str(data, new, x, y)
   expect_s3_class(data, "tbl_df")
   expect_identical(colnames(data), "new")
   expect_identical(data$new, c("good. 2021", "Saw fish.", NA))
@@ -75,19 +84,4 @@ test_that("unite_str matches new sf as string", {
   expect_s3_class(data, "sf")
   expect_identical(colnames(data), c("comment2", "geometry"))
   expect_identical(data$comment2, c("text", NA_character_, "text3"))
-})
-
-test_that("unite matches new sf as symbol", {
-  data <- dplyr::tribble(
-    ~comment, ~comment.x,  ~x, ~y,
-    "text",   NA, 0, 0,
-    NA,   "", 1, 0,
-    "",   "text3", 2, 0) |>
-    sf::st_as_sf(coords = c("x", "y"), dim = "XY")
-  
-  data <- tidyr::unite(data, comment2, tidyr::matches("comment"))
-  expect_s3_class(data, "tbl_df")
-  expect_s3_class(data, "sf")
-  expect_identical(colnames(data), c("comment2", "geometry"))
-  expect_identical(data$comment2, c("text_NA", "NA_", "_text3"))
 })

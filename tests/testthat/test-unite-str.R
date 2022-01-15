@@ -46,10 +46,26 @@ test_that("unite_str works integer", {
   expect_identical(data$new, c("1. 3", "2", NA))
 })
 
-test_that("unite_str ", {
+test_that("unite_str missing values", {
   data <- tibble::tibble(x = c("", "", NA), y = c("", NA, ""))
   data <- unite_str(data, "new", x, y)
   expect_s3_class(data, "tbl_df")
   expect_identical(colnames(data), "new")
   expect_identical(data$new, c(NA_character_, NA_character_, NA_character_))
+})
+
+test_that("unite_str matches same", {
+  data <- tibble::tibble(comment = c("", "", NA), comment.x = c("text", NA, "text3"))
+  data <- unite_str(data, "comment", tidyr::matches("comment"))
+  expect_s3_class(data, "tbl_df")
+  expect_identical(colnames(data), "comment")
+  expect_identical(data$comment, c("text", NA_character_, "text3"))
+})
+
+test_that("unite_str matches new", {
+  data <- tibble::tibble(comment = c("", "", NA), comment.x = c("text", NA, "text3"))
+  data <- unite_str(data, "comment2", tidyr::matches("comment"))
+  expect_s3_class(data, "tbl_df")
+  expect_identical(colnames(data), "comment2")
+  expect_identical(data$comment2, c("text", NA_character_, "text3"))
 })

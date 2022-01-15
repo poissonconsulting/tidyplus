@@ -76,8 +76,9 @@ test_that("unite_str matches new sf as string", {
     ~comment, ~comment.x,  ~x, ~y,
     "text",   NA, 0, 0,
     NA,   "", 1, 0,
-    "",   "text3", 2, 0) |>
-    sf::st_as_sf(coords = c("x", "y"), dim = "XY")
+    "",   "text3", 2, 0)
+  
+  data <- sf::st_as_sf(data, coords = c("x", "y"), dim = "XY")
   
   data <- unite_str(data, "comment2", tidyr::matches("comment"))
   expect_s3_class(data, "tbl_df")

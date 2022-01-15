@@ -62,10 +62,32 @@ test_that("unite_str matches same", {
   expect_identical(data$comment, c("text", NA_character_, "text3"))
 })
 
-test_that("unite_str matches new", {
-  data <- tibble::tibble(comment = c("", "", NA), comment.x = c("text", NA, "text3"))
+test_that("unite_str matches new sf as string", {
+  data <- dplyr::tribble(
+    ~comment, ~comment.x,  ~x, ~y,
+    "text",   NA, 0, 0,
+    NA,   "", 1, 0,
+    "",   "text3", 2, 0) |>
+    sf::st_as_sf(coords = c("x", "y"), dim = "XY")
+  
   data <- unite_str(data, "comment2", tidyr::matches("comment"))
   expect_s3_class(data, "tbl_df")
-  expect_identical(colnames(data), "comment2")
+  expect_s3_class(data, "sf")
+  expect_identical(colnames(data), c("comment2", "geometry"))
   expect_identical(data$comment2, c("text", NA_character_, "text3"))
+})
+
+test_that("unite matches new sf as symbol", {
+  data <- dplyr::tribble(
+    ~comment, ~comment.x,  ~x, ~y,
+    "text",   NA, 0, 0,
+    NA,   "", 1, 0,
+    "",   "text3", 2, 0) |>
+    sf::st_as_sf(coords = c("x", "y"), dim = "XY")
+  
+  data <- tidyr::unite(data, comment2, tidyr::matches("comment"))
+  expect_s3_class(data, "tbl_df")
+  expect_s3_class(data, "sf")
+  expect_identical(colnames(data), c("comment2", "geometry"))
+  expect_identical(data$comment2, c("text_NA", "NA_", "_text3"))
 })

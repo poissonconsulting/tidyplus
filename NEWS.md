@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9008
+
+- Added `collapse_comments()` to collapse comments into a string.
+
+
 # tidyplus 0.0.0.9007
 
 - Added `replace_na_if()` to conditionally replace missing values.
@@ -7,7 +12,7 @@
 
 # tidyplus 0.0.0.9006
 
-- Added `unite_str()` to manipulate comments.
+- Added `unite_str()` to combine comments in separate columns.
 
 
 # tidyplus 0.0.0.9005

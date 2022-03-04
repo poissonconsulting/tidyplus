@@ -35,6 +35,8 @@ test_that("collapse_comments strips spaces", {
   expect_identical(collapse_comments(".     x   y. "), ". x y.")
   expect_identical(collapse_comments("z", ".     x   y. "), "z. . x y.")
   expect_identical(collapse_comments("x ."), "x.")
+  expect_identical(collapse_comments(".", "x"), "x.")
+  expect_identical(collapse_comments(". .", "x"), "x.")
   expect_identical(collapse_comments("x . "), "x.")
   expect_identical(collapse_comments(" x  "), "x.")
   expect_identical(collapse_comments("x. y"), "x. y.")

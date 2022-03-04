@@ -120,6 +120,10 @@ is already present.</p>
 <span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu">tibble</span><span class="fu">::</span><span class="fu"><a href="https://tibble.tidyverse.org/reference/add_column.html" class="external-link">add_column</a></span><span class="op">(</span><span class="va">data</span>, x <span class="op">=</span> <span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error : Column name `x` must not be duplicated.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Use .name_repair to specify repair.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `stop_vctrs()`:</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Names must be unique.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BB0000;">✖</span> These names are duplicated:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   * "x" at locations 1 and 3.</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># add_missing_column silently ignores</span></span>
 <span class="r-in"><span class="fu">add_missing_column</span><span class="op">(</span><span class="va">data</span>, x <span class="op">=</span> <span class="fl">4</span><span class="op">:</span><span class="fl">6</span><span class="op">)</span></span>
@@ -143,7 +147,7 @@ is already present.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.9000.</p>
 </div>
 
       </footer></div>

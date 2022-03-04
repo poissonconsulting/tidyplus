@@ -2,6 +2,7 @@
 
 export(add_missing_column)
 export(coalesce_data)
+export(collapse_comments)
 export(if_else2)
 export(only)
 export(replace_na_if)

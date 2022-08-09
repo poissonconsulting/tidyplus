@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9009
+
+- Added `drop_uninformative_columns()`.
+
+
 # tidyplus 0.0.0.9008
 
 - Added `collapse_comments()` to collapse comments into a string.

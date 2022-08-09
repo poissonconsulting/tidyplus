@@ -19,10 +19,7 @@ add_missing_column(
 Name-value pairs, passed on to \code{\link[tibble:tibble]{tibble()}}. All values must have
 the same size of \code{.data} or size 1.}
 
-\item{.before}{One-based column index or column name where to add the
-new columns, default: after last column.}
-
-\item{.after}{One-based column index or column name where to add the
+\item{.before, .after}{One-based column index or column name where to add the
 new columns, default: after last column.}
 
 \item{.name_repair}{Treatment of problematic column names:

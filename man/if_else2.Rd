@@ -9,13 +9,7 @@ if_else2(condition, true, false)
 \arguments{
 \item{condition}{Logical vector}
 
-\item{true}{Values to use for \code{TRUE} and \code{FALSE} values of
-\code{condition}. They must be either the same length as \code{condition},
-or length 1. They must also be the same type: \code{if_else()} checks that
-they have the same type and same class. All other attributes are
-taken from \code{true}.}
-
-\item{false}{Values to use for \code{TRUE} and \code{FALSE} values of
+\item{true, false}{Values to use for \code{TRUE} and \code{FALSE} values of
 \code{condition}. They must be either the same length as \code{condition},
 or length 1. They must also be the same type: \code{if_else()} checks that
 they have the same type and same class. All other attributes are

@@ -5,6 +5,7 @@
 #' `replace_na_if()` is a wrapper on `if_else2(is.na(x) & condition, true, x)`
 #' 
 #' @param x Vector with missing values to modify.
+#' @param true The replacement values where condition is `TRUE`.
 #' @inherit if_else2
 #' @return A modified version of x that replaces any missing values where condition is `TRUE`
 #' with `true`.

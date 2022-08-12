@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.0.0.9010
+
+- Added `drop_na_all()` to drop rows will all missing values.
+
+
 # tidyplus 0.0.0.9009
 
 - Added `drop_uninformative_columns()`.

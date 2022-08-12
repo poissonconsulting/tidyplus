@@ -31,6 +31,9 @@
     <loc>/reference/collapse_comments.html</loc>
   </url>
   <url>
+    <loc>/reference/drop_na_all.html</loc>
+  </url>
+  <url>
     <loc>/reference/drop_uninformative_columns.html</loc>
   </url>
   <url>

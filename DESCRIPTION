@@ -21,6 +21,7 @@ Imports:
     tibble,
     tidyselect,
     tidyr,
+    vctrs
 Suggests: 
     covr,
     readr,

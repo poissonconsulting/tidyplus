@@ -1,5 +1,5 @@
 Package: tidyplus
-Title: Additional tidyverse functions
+Title: Additional Tidyverse Functions
 Version: 0.0.1
 Authors@R: 
     c(person(given = "Joe",

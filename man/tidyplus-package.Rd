@@ -4,7 +4,7 @@
 \name{tidyplus-package}
 \alias{tidyplus}
 \alias{tidyplus-package}
-\title{tidyplus: Additional tidyverse functions}
+\title{tidyplus: Additional Tidyverse Functions}
 \description{
 Provides functions that complement those in the 'tidyverse'.
 }

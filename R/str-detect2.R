@@ -1,8 +1,8 @@
 #' @description
-#' Vectorized over `string` and `pattern`. 
+#' Vectorised over `string` and `pattern`. 
 #' Actually equivalent to `grepl(pattern, x)` as returns FALSE 
 #' for `NA`s (unlike [`stringr::str_detect()`]).
-#' This behaviour is useful when searching comments many of which are NA to 
+#' This behavior is useful when searching comments many of which are NA to 
 #' indicate no comments present.
 #' 
 #' @inherit stringr::str_detect

@@ -9,7 +9,7 @@ drop_uninformative_columns(data, na_distinct = TRUE)
 \arguments{
 \item{data}{A data frame.}
 
-\item{na_distinct}{A flag specifing whether to treat missing values
+\item{na_distinct}{A flag specifying whether to treat missing values
 as distinct from other values.}
 }
 \description{

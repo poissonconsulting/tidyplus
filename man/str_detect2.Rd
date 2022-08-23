@@ -31,10 +31,10 @@ Match character, word, line and sentence boundaries with
 A logical vector.
 }
 \description{
-Vectorized over \code{string} and \code{pattern}.
+Vectorised over \code{string} and \code{pattern}.
 Actually equivalent to \code{grepl(pattern, x)} as returns FALSE
 for \code{NA}s (unlike \code{\link[stringr:str_detect]{stringr::str_detect()}}).
-This behaviour is useful when searching comments many of which are NA to
+This behavior is useful when searching comments many of which are NA to
 indicate no comments present.
 }
 \examples{

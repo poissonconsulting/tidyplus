@@ -7,7 +7,7 @@ informative_na_not_distinct <- function(x) length(unique(x[!is.na(x)])) %in% 0:1
 #' if `na_distinct = FALSE` also drop columns which all have one value and/or missing values.
 #' 
 #' @param data A data frame.
-#' @param na_distinct A flag specifing whether to treat missing values 
+#' @param na_distinct A flag specifying whether to treat missing values 
 #' as distinct from other values.
 #' @export
 #' @examples 

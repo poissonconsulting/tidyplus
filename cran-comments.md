@@ -10,4 +10,9 @@ release 4.2.1
 
 ## R CMD check results
 
-0 errors | 0 warnings | 0 notes
+0 errors | 0 warnings | 1 note
+
+> * checking CRAN incoming feasibility ... [9s] NOTE
+> Maintainer: 'Joe Thorley <joe@poissonconsulting.ca>'
+
+> New submission

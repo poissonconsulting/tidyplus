@@ -26,7 +26,7 @@ knitr::opts_chunk$set(
 ## Introduction
 
 `tidyplus` provides functions such as `str_crush()`, `add_missing_column()`, 
-`coalesce_data()` and `drop_na_all()` that complement tidyverse functionality
+`coalesce_data()` and `drop_na_all()` that complement 'tidyverse' functionality
 or functions that provide alternative behaviors such as `if_else2()`
 and `str_detect2()`.
 

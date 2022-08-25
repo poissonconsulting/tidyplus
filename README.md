@@ -19,8 +19,8 @@ status](https://www.r-pkg.org/badges/version/tidyplus)](https://cran.r-project.o
 
 `tidyplus` provides functions such as `str_crush()`,
 `add_missing_column()`, `coalesce_data()` and `drop_na_all()` that
-complement tidyverse functionality or functions that provide alternative
-behaviors such as `if_else2()` and `str_detect2()`.
+complement ‘tidyverse’ functionality or functions that provide
+alternative behaviors such as `if_else2()` and `str_detect2()`.
 
 ## Installation
 

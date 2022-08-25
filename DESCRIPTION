@@ -1,17 +1,15 @@
 Package: tidyplus
 Title: Additional Tidyverse Functions
 Version: 0.0.1
-Authors@R: 
-    c(person(given = "Joe",
-             family = "Thorley",
-             role = c("aut", "cre"),
-             email = "joe@poissonconsulting.ca",
-             comment = c(ORCID = "0000-0002-7683-4592")),
-      person(given = "Poisson Consulting",
-             role = c("cph", "fnd")))
+Authors@R: c(
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Poisson Consulting", role = c("cph", "fnd"))
+  )
 Description: Provides functions that complement those in the 'tidyverse'.
 License: MIT + file LICENSE
-Depends: R (>= 3.6)
+Depends: 
+    R (>= 3.6)
 Imports:
     chk,
     dplyr,
@@ -19,8 +17,8 @@ Imports:
     stringi,
     stringr,
     tibble,
-    tidyselect,
     tidyr,
+    tidyselect,
     vctrs
 Suggests: 
     covr,

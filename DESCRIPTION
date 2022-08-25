@@ -1,5 +1,5 @@
 Package: tidyplus
-Title: Additional Tidyverse Functions
+Title: Additional 'Tidyverse' Functions
 Version: 0.0.1
 Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),

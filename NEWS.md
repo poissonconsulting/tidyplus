@@ -2,4 +2,4 @@
 
 # tidyplus 0.0.1
 
-New CRAN release.
+Released on CRAN release.

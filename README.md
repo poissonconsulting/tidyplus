@@ -24,7 +24,7 @@ alternative behaviors such as `if_else2()` and `str_detect2()`.
 
 ## Installation
 
-You can install the development version of tidyplus from
+You can install the development version of `tidyplus` from
 [GitHub](https://github.com/poissonconsulting/tidyplus) with:
 
 ``` r

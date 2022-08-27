@@ -74,7 +74,8 @@ If a single value is provided for a column it is treated as a regular expression
     <h2>Value</h2>
     
 
-<p>A modified data frame.</p>
+<p>The original data frame with one or more columns coalesced into a
+new column.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -87,6 +88,23 @@ coalescence can be further coalesced.</p>
     <div class="dont-index"><p><code><a href="https://dplyr.tidyverse.org/reference/coalesce.html" class="external-link">dplyr::coalesce()</a></code></p></div>
     </div>
 
+    <div id="ref-examples">
+    <h2>Examples</h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="cn">NA</span>, <span class="cn">NA</span><span class="op">)</span>, y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="cn">NA</span>, <span class="fl">3</span>, <span class="cn">NA</span><span class="op">)</span>, z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">7</span>, <span class="fl">8</span>, <span class="fl">9</span><span class="op">)</span>, a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">4</span>, <span class="fl">5</span>, <span class="fl">6</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">coalesce_data</span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span><span class="op">)</span><span class="op">)</span>, quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   z a  b</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 7 4  1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 8 5  3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 9 6 NA</span>
+<span class="r-in"><span><span class="fu">coalesce_data</span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>z <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"y"</span>, <span class="st">"x"</span><span class="op">)</span>, d <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"z"</span>, <span class="st">"a"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Coalesced 'z' from: 'y' and 'x'</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Coalesced 'd' from: 'z' and 'a'</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   d</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 6</span>
+</code></pre></div>
+    </div>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top"><h2 data-toc-skip>Contents</h2>

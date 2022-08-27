@@ -1,8 +1,9 @@
 #' Drop rows containing all missing values
 #' 
-#' This is a convenient way to drop rows for which all values are missing.
+#' This is a convenient way to drop uninformative rows from a data frame.
 #' 
 #' @inheritParams tidyr::drop_na
+#' @return The original data frame with rows for which all values are missing dropped.
 #' @seealso [`tidyr::drop_na`] and [`drop_uninformative_columns`]
 #' @export
 #' @examples 

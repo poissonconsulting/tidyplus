@@ -24,6 +24,10 @@ tidyverse; we support it here for backward compatibility).}
 
 \item{remove}{If \code{TRUE}, remove input columns from output data frame.}
 }
+\value{
+The original data frame with the one or more columns combined as
+character vectors separated by a period.
+}
 \description{
 Convenience function for combining character columns.
 }
@@ -32,9 +36,12 @@ Blank values of "" are converted into missing values.
 }
 \examples{
 data <- tibble::tibble(x = c("good", "Saw fish.", "", NA), y = c("2021", NA, NA, NA))
+
+# unite has poor handling of character vectors
 tidyr::unite(data, "new", x, y, remove = FALSE)
+
 unite_str(data, "new", x, y, remove = FALSE)
 }
 \seealso{
-\code{\link[tidyr:unite]{tidyr::unite()}}
+\code{\link[tidyr:unite]{tidyr::unite()}} and \code{\link[=collapse_comments]{collapse_comments()}}
 }

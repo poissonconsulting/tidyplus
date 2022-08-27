@@ -9,6 +9,9 @@
 #' 
 #' @inherit tibble::add_column
 #' 
+#' @return The original data frame with missing columns added 
+#' if not already present.
+#'
 #' @seealso [`tibble::add_column()`]
 #' @export
 #' @examples 

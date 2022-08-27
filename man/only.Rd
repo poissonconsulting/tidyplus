@@ -12,7 +12,7 @@ only(x, na_rm = FALSE)
 \item{na_rm}{A flag indicating whether to exclude missing values.}
 }
 \value{
-The only value from a vector.
+The only distinct value from a vector otherwise throws an error.
 }
 \description{
 Extracts the only distinct value from an atomic vector

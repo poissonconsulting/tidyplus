@@ -13,10 +13,16 @@
 #' new column names and the values are the names of the columns to coalesce.
 #' If a single value is provided for a column it is treated as a regular expression.
 #' @param quiet A flag specifying whether to provide messages.
+#' @return The original data frame with one or more columns coalesced into a 
+#' new column.
+#'
 #' @seealso [`dplyr::coalesce()`]
 #'
-#' @return A modified data frame.
 #' @export
+#' @examples 
+#' data <- data.frame(x = c(1, NA, NA), y = c(NA, 3, NA), z = c(7, 8, 9), a = c(4, 5, 6))
+#' coalesce_data(data, list(b = c("x", "y")), quiet = TRUE)
+#' coalesce_data(data, list(z = c("y", "x"), d = c("z", "a")))
 coalesce_data <- function(x, coalesce = list(), quiet = FALSE) {
   chk_data(x)
   chk_list(coalesce)

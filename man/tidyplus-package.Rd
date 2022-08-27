@@ -4,9 +4,9 @@
 \name{tidyplus-package}
 \alias{tidyplus}
 \alias{tidyplus-package}
-\title{tidyplus: Additional 'Tidyverse' Functions}
+\title{tidyplus: Additional 'tidyverse' Functions}
 \description{
-Provides functions such as `str_crush()`, `add_missing_column()`, `coalesce_data()` and `drop_na_all()` that complement 'tidyverse' functionality or functions that provide alternative behaviors such as `if_else2()` and `str_detect2()`.
+Provides functions such as str_crush(), add_missing_column(), coalesce_data() and drop_na_all() that complement 'tidyverse' functionality or functions that provide alternative behaviors such as if_else2() and str_detect2().
 }
 \author{
 \strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})

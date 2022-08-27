@@ -16,7 +16,8 @@ If a single value is provided for a column it is treated as a regular expression
 \item{quiet}{A flag specifying whether to provide messages.}
 }
 \value{
-A modified data frame.
+The original data frame with one or more columns coalesced into a
+new column.
 }
 \description{
 Coalesce values in multiple columns by finding the first non-missing
@@ -27,6 +28,11 @@ Coalesced columns are removed.
 Coalescence is performed in the order
 specified in the coalesce argument such that a column produced by
 coalescence can be further coalesced.
+}
+\examples{
+data <- data.frame(x = c(1, NA, NA), y = c(NA, 3, NA), z = c(7, 8, 9), a = c(4, 5, 6))
+coalesce_data(data, list(b = c("x", "y")), quiet = TRUE)
+coalesce_data(data, list(z = c("y", "x"), d = c("z", "a")))
 }
 \seealso{
 \code{\link[dplyr:coalesce]{dplyr::coalesce()}}

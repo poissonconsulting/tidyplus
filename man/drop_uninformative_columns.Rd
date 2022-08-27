@@ -12,6 +12,9 @@ drop_uninformative_columns(data, na_distinct = TRUE)
 \item{na_distinct}{A flag specifying whether to treat missing values
 as distinct from other values.}
 }
+\value{
+The original data frame with only informative columns.
+}
 \description{
 This is a convenient way to drop columns which all have one value (missing or not) or
 if \code{na_distinct = FALSE} also drop columns which all have one value and/or missing values.

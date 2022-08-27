@@ -12,8 +12,11 @@ drop_na_all(data, ...)
 \item{...}{<\code{\link[tidyr:tidyr_tidy_select]{tidy-select}}> Columns to inspect for
 missing values. If empty, all columns are used.}
 }
+\value{
+The original data frame with rows for which all values are missing dropped.
+}
 \description{
-This is a convenient way to drop rows for which all values are missing.
+This is a convenient way to drop uninformative rows from a data frame.
 }
 \examples{
 data <- tibble::tibble(

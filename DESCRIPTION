@@ -1,15 +1,15 @@
 Package: tidyplus
-Title: Additional 'Tidyverse' Functions
+Title: Additional 'tidyverse' Functions
 Version: 0.0.1
 Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7683-4592")),
     person("Poisson Consulting", role = c("cph", "fnd"))
   )
-Description: Provides functions such as `str_crush()`, `add_missing_column()`, 
-  `coalesce_data()` and `drop_na_all()` that complement 'tidyverse' functionality
-  or functions that provide alternative behaviors such as `if_else2()`
-  and `str_detect2()`.
+Description: Provides functions such as str_crush(), add_missing_column(), 
+  coalesce_data() and drop_na_all() that complement 'tidyverse' functionality
+  or functions that provide alternative behaviors such as if_else2()
+  and str_detect2().
 License: MIT + file LICENSE
 Depends: 
     R (>= 3.6)

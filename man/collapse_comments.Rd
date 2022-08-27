@@ -9,11 +9,26 @@ collapse_comments(...)
 \arguments{
 \item{...}{objects to be collapsed into a string.}
 }
+\value{
+A string of the collapsed comments.
+}
 \description{
-Collapse comments by concatenating, coercing to string
-and then collapsing into a single string (character scalar)
-using the '. ' separator.
+Collapse comments coercing each element to a string (character scalar)
+and then collapsing into a single string using the '. ' separator.
 }
 \examples{
-collapse_comments(c("Saw fish"), character(0), "Nice. .", NA_character_)
+collapse_comments("Saw fish", character(0), "Nice. .", NA_character_)
+
+data <- data.frame(
+  visit = c(1,1,2, 2), 
+  fish = 1:4,
+  comment = c("Sunny day.  ", "Skinny fish", "Lost boot", NA))
+
+data |>
+  dplyr::group_by(visit) |>
+  dplyr::summarise(comment = collapse_comments(comment)) |>
+  dplyr::ungroup()
+}
+\seealso{
+\code{\link[=unite_str]{unite_str()}}
 }

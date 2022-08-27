@@ -1,6 +1,3 @@
-informative_na_distinct <- function(x) length(unique(x)) == 1L
-informative_na_not_distinct <- function(x) length(unique(x[!is.na(x)])) %in% 0:1
-
 #' Drop uninformative columns from a data frame
 #' 
 #' This is a convenient way to drop columns which all have one value (missing or not) or 
@@ -9,6 +6,7 @@ informative_na_not_distinct <- function(x) length(unique(x[!is.na(x)])) %in% 0:1
 #' @param data A data frame.
 #' @param na_distinct A flag specifying whether to treat missing values 
 #' as distinct from other values.
+#' @return The original data frame with only informative columns.
 #' @export
 #' @examples 
 # drop_uninformative_columns ---------------------------------

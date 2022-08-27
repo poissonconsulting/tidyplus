@@ -8,8 +8,8 @@
 #' 
 #' @param x  An atomic vector.
 #' @param na_rm A flag indicating whether to exclude missing values.
+#' @return The only distinct value from a vector otherwise throws an error.
 #' @seealso [`dplyr::first()`]
-#' @return The only value from a vector.
 #' @export
 #' @examples
 #' only(c(1, 1))

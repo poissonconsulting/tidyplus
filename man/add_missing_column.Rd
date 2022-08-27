@@ -38,6 +38,10 @@ This argument is passed on as \code{repair} to \code{\link[vctrs:vec_as_names]{v
 See there for more details on these terms and the strategies used
 to enforce them.}
 }
+\value{
+The original data frame with missing columns added
+if not already present.
+}
 \description{
 This is a convenient way to add one more columns (if not already present) to
 an existing data frame. It is useful to ensure that all required columns

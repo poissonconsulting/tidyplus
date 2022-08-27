@@ -3,6 +3,11 @@ test_that("coalesce_data unaltered with no coalesce", {
   expect_identical(coalesce_data(data), data)
 })
 
+test_that("coalesce_data unaltered with coalesce 1 column", {
+  data <- data.frame(x = 1)
+  expect_identical(coalesce_data(data, list(x = "x")), data)
+})
+
 test_that("coalesce_data gets first non-missing", {
   data <- data.frame(x = 1, y = 2)
   coalesce <- list(z = c("x", "y"))

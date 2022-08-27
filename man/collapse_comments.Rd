@@ -24,10 +24,12 @@ data <- data.frame(
   fish = 1:4,
   comment = c("Sunny day.  ", "Skinny fish", "Lost boot", NA))
 
+\dontrun{
 data |>
   dplyr::group_by(visit) |>
   dplyr::summarise(comment = collapse_comments(comment)) |>
   dplyr::ungroup()
+}
 }
 \seealso{
 \code{\link[=unite_str]{unite_str()}}

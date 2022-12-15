@@ -8,6 +8,14 @@
 \description{
 Provides functions such as str_crush(), add_missing_column(), coalesce_data() and drop_na_all() that complement 'tidyverse' functionality or functions that provide alternative behaviors such as if_else2() and str_detect2().
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/poissonconsulting/tidyplus}
+  \item Report bugs at \url{https://github.com/poissonconsulting/tidyplus/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Joe Thorley \email{joe@poissonconsulting.ca} (\href{https://orcid.org/0000-0002-7683-4592}{ORCID})
 

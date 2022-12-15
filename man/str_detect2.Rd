@@ -2,7 +2,7 @@
 % Please edit documentation in R/str-detect2.R
 \name{str_detect2}
 \alias{str_detect2}
-\title{Detect the presence or absence of a pattern in a string.}
+\title{Detect the presence/absence of a match}
 \usage{
 str_detect2(string, pattern, negate = FALSE)
 }
@@ -12,9 +12,9 @@ coercible to one.}
 
 \item{pattern}{Pattern to look for.
 
-The default interpretation is a regular expression, as described
-in \link[stringi:stringi-search-regex]{stringi::stringi-search-regex}. Control options with
-\code{\link[stringr:regex]{regex()}}.
+The default interpretation is a regular expression, as described in
+\code{vignette("regular-expressions")}. Use \code{\link[stringr:regex]{regex()}} for finer control of the
+matching behaviour.
 
 Match a fixed string (i.e. by comparing only bytes), using
 \code{\link[stringr:fixed]{fixed()}}. This is fast, but approximate. Generally,
@@ -28,7 +28,7 @@ Match character, word, line and sentence boundaries with
 \item{negate}{If \code{TRUE}, return non-matching elements.}
 }
 \value{
-A logical vector.
+A logical vector the same length as \code{string}/\code{pattern}.
 }
 \description{
 Vectorised over \code{string} and \code{pattern}.

@@ -7,10 +7,11 @@
 str_crush(string)
 }
 \arguments{
-\item{string}{A character vector.}
+\item{string}{Input vector. Either a character vector, or something
+coercible to one.}
 }
 \value{
-A character vector.
+A character vector the same length as \code{string}.
 }
 \description{
 \code{str_crush()}, which removes all whitespace from a string,

@@ -29,6 +29,6 @@ drop_na_all.data.frame <- function(data, ...) {
     cols <- data[vars]
   }
   
-  keep <- which(!vctrs::vec_equal_na(cols))
+  keep <- which(!vctrs::vec_detect_missing(cols))
   dplyr::slice(data, keep)
 }

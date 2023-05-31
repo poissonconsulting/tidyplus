@@ -33,10 +33,21 @@ group by for just this operation, functioning as an alternative to \code{\link[d
 details and examples, see \link[dplyr:dplyr_by]{?dplyr_by}.}
 }
 \value{
-A dataframe
+An object \emph{usually} of the same type as \code{.data}.
+\itemize{
+\item The rows come from the underlying \code{\link[dplyr:group_keys]{group_keys()}}.
+\item The columns are a combination of the grouping keys and the summary
+expressions that you provide.
+\item The grouping structure is controlled by the \verb{.groups=} argument, the
+output may be another \link[dplyr]{grouped_df}, a \link[dplyr]{tibble} or a \link[dplyr]{rowwise} data frame.
+\item Data frame attributes are \strong{not} preserved, because \code{summarise()}
+fundamentally creates a new data frame.
+}
 }
 \description{
-Wrapper on dplyr::summarise that sets the .group variable to "keep".
+Wrapper on \code{dplyr::summarise} that sets the .group variable to "keep".
+This means that all the groups set in \code{dplyr::group_by} are retained, not
+just the first group.
 }
 \section{Useful functions}{
 
@@ -87,7 +98,10 @@ The following methods are currently available in loaded packages:
   id = c(1, 1, 2, 2), 
   value = c(10, 4, 20, 6)
  )
+# summarise2 doesn't produce message about groups
 df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
+# summarise doesn't retain all the groups set in `group_by`
+df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
 }
 \seealso{
 Other single table verbs: 

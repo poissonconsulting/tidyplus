@@ -1,6 +1,6 @@
 #' Summarise Each Group Down to One Row
 #' 
-#' Create a new data frame but sets the .group variable to "keep" 
+#' Wrapper on dplyr::summarise that sets the .group variable to "keep".
 #'
 #' @inherit dplyr::summarise
 #' @return A dataframe

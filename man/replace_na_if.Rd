@@ -9,7 +9,7 @@ replace_na_if(x, condition, true)
 \arguments{
 \item{x}{Vector with missing values to modify.}
 
-\item{condition}{Logical vector}
+\item{condition}{A logical vector}
 
 \item{true}{The replacement values where condition is \code{TRUE}.}
 }

@@ -17,7 +17,7 @@
 #' df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
 #' # summarise doesn't retain all the groups set in `group_by`
 #' df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
-summarise2 <- function(.data, ..., .by = NULL) {
+summarise2 <- function(.data, ...) {
   dplyr::summarize(.data, ..., .by = NULL, .groups = "keep")
 }
 

@@ -5,9 +5,9 @@
 \alias{summarize2}
 \title{Summarise Each Group Down to One Row}
 \usage{
-summarise2(.data, ...)
+summarise2(.data, ..., .by = NULL, .groups = "keep")
 
-summarize2(.data, ...)
+summarize2(.data, ..., .by = NULL, .groups = "keep")
 }
 \arguments{
 \item{.data}{A data frame, data frame extension (e.g. a tibble), or a
@@ -25,6 +25,35 @@ The value can be:
 
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#deprecated}{\figure{lifecycle-deprecated.svg}{options: alt='[Deprecated]'}}}{\strong{[Deprecated]}} Returning values with size 0 or >1 was
 deprecated as of 1.1.0. Please use \code{\link[dplyr:reframe]{reframe()}} for this instead.}
+
+\item{.by}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+
+<\code{\link[dplyr:dplyr_tidy_select]{tidy-select}}> Optionally, a selection of columns to
+group by for just this operation, functioning as an alternative to \code{\link[dplyr:group_by]{group_by()}}. For
+details and examples, see \link[dplyr:dplyr_by]{?dplyr_by}.}
+
+\item{.groups}{\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}} Grouping structure of the
+result.
+\itemize{
+\item "drop_last": dropping the last level of grouping. This was the
+only supported option before version 1.0.0.
+\item "drop": All levels of grouping are dropped.
+\item "keep": Same grouping structure as \code{.data}.
+\item "rowwise": Each row is its own group.
+}
+
+When \code{.groups} is not specified, it is chosen
+based on the number of rows of the results:
+\itemize{
+\item If all the results have 1 row, you get "drop_last".
+\item If the number of rows varies, you get "keep" (note that returning a
+variable number of rows was deprecated in favor of \code{\link[dplyr:reframe]{reframe()}}, which
+also unconditionally drops all levels of grouping).
+}
+
+In addition, a message informs you of that choice, unless the result is ungrouped,
+the option "dplyr.summarise.inform" is set to \code{FALSE},
+or when \code{summarise()} is called from a function in a package.}
 }
 \value{
 An object \emph{usually} of the same type as \code{.data}.
@@ -39,9 +68,9 @@ fundamentally creates a new data frame.
 }
 }
 \description{
-Wrapper on \code{dplyr::summarise} that sets the .group variable to "keep".
-This means that all the groups set in \code{dplyr::group_by} are retained, not
-just the first group.
+Wrapper on \code{dplyr::summarise} that sets the default for the .group variable
+to "keep". This means that all the groups set in \code{dplyr::group_by} are
+retained, not just the first group.
 }
 \section{Useful functions}{
 
@@ -98,12 +127,5 @@ df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
 df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
 }
 \seealso{
-Other single table verbs: 
-\code{\link[dplyr]{arrange}()},
-\code{\link[dplyr]{filter}()},
-\code{\link[dplyr]{mutate}()},
-\code{\link[dplyr]{reframe}()},
-\code{\link[dplyr]{rename}()},
-\code{\link[dplyr]{select}()},
-\code{\link[dplyr]{slice}()}
+\code{\link[dplyr:summarise]{dplyr::summarise()}} and \code{\link[dplyr:summarise]{dplyr::summarize()}}
 }

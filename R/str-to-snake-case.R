@@ -1,6 +1,6 @@
-#' String to Snake Case
+#' Converts strings to Snake Case
 #'
-#' @param x input string or mutliple strings to be converted to snake case
+#' @param x input string or multiple strings to be converted to snake case
 #'
 #' @return string or strings converted to snake_case
 #' @export
@@ -18,7 +18,7 @@
 #'output <- str_to_snake_case(input)
 #'print(output)
 #' 
-#'input <- c("list of strings", "strings in a list", "many strings in a list")
+#'input <- c("multiples of strings", "strings in a multiples", "many strings")
 #'output <- str_to_snake_case(input)
 #'print(output)
 #' 

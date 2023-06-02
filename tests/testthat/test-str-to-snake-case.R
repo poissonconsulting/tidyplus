@@ -4,20 +4,33 @@ test_that("removes spaces from strings", {
   expect_equal(output, "string_of_words")
   })
 
-test_that("make everything lowercase", {
-  input <- "StRiNg oF wOrDs"
+test_that("underscores already present not replaced",{
+  input <- "string_of words"
   output <- str_to_snake_case(input)
   expect_equal(output, "string_of_words")
 })
 
-test_that("underscores already present not replaced",{
-  input <- "StRiNg_oF wOrDs"
+test_that("converts CamelCase to snake_case",{
+  input <- "StringOfWords"
   output <- str_to_snake_case(input)
   expect_equal(output, "string_of_words")
 })
+
+test_that("special characters are removed",{
+  input <- "s!t$r@ing of %char^&act*ers"
+  output <- str_to_snake_case(input)
+  expect_equal(output, "string_of_characters")
+})
+
+test_that("removes trailing and starting underscores",{
+  input <- "_string_of_words_"
+  output <- str_to_snake_case(input)
+  expect_equal(output, "string_of_words")
+})
+
 
 test_that(" ",{
-  input <- 
-  output <- str_to_snake_case(input)
+  input <-
+    output <- str_to_snake_case(input)
   expect_equal(output, "string_of_words")
 })

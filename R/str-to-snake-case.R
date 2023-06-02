@@ -8,8 +8,9 @@
 #' @examples
 #' 
 str_to_snake_case <- function(x) {
-  #snake_case_string <- gsub('[^[:alnum:] ]','',x) #remove special characters
   snake_case_string <- gsub("[^A-Za-z0-9_ ]", "", x)
-  snake_case_string <- gsub("\\s", "_", tolower(x)) #replace spaces and make lower
+  snake_case_string <- gsub(" ", "_", tolower(gsub("(.)([A-Z])", "\\1 \\2", snake_case_string)))
+  snake_case_string <- gsub("[_$]", "", snake_case_string)
+  snake_case_string <- gsub("^_", "", snake_case_string)
   return(snake_case_string)
 }

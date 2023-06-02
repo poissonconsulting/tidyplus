@@ -97,3 +97,30 @@ test_that("same data output as summarise with one group", {
     orginal$mean
   )
 })
+
+test_that("summarise2 returns empty dataframe same as dplyr::summarise", {
+  expect_identical(summarise2(data.frame()), dplyr::summarise(data.frame()))
+  expect_identical(summarise2(dplyr::tibble()), dplyr::summarise(dplyr::tibble()))
+  
+  expect_identical(summarize2(data.frame()), dplyr::summarise(data.frame()))
+  expect_identical(summarize2(dplyr::tibble()), dplyr::summarise(dplyr::tibble()))
+})
+
+test_that("can pass column names stored as text with .data", {
+  df <- data.frame(
+    group = c("A", "A", "B", "B"),
+    id = c(1, 1, 2, 2),
+    value = c(10, 4, 20, 6)
+  )
+  var <- "value"
+  expect_snapshot(df |> dplyr::group_by(group) |> summarise2(mean = mean(.data[[var]])))
+})
+
+test_that("can access column name with .data$col_name", {
+  df <- data.frame(
+    group = c("A", "A", "B", "B"),
+    id = c(1, 1, 2, 2),
+    value = c(10, 4, 20, 6)
+  )
+  expect_snapshot(df |> dplyr::group_by(group) |> summarise2(mean = mean(.data$value)))
+})

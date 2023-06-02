@@ -1,10 +1,11 @@
 #' Summarise Each Group Down to One Row
-#' 
-#' Wrapper on `dplyr::summarise` that sets the .group variable to "keep". 
-#' This means that all the groups set in `dplyr::group_by` are retained, not
-#' just the first group. 
 #'
+#' Wrapper on `dplyr::summarise` that sets the default for the .group variable
+#' to "keep". This means that all the groups set in `dplyr::group_by` are
+#' retained, not just the first group.
+#' 
 #' @inherit dplyr::summarise
+#' @seealso [`dplyr::summarise()`] and [`dplyr::summarize()`]
 #' @export
 #'
 #' @examples
@@ -17,8 +18,8 @@
 #' df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
 #' # summarise doesn't retain all the groups set in `group_by`
 #' df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
-summarise2 <- function(.data, ...) {
-  dplyr::summarize(.data, ..., .by = NULL, .groups = "keep")
+summarise2 <- function(.data, ..., .by = NULL, .groups = "keep") {
+  dplyr::summarize(.data, ..., .by = !!.by, .groups = .groups)
 }
 
 #' @rdname summarise2

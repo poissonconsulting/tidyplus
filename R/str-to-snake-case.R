@@ -6,21 +6,13 @@
 #' @export
 #'
 #' @examples
-#'input <- "string of words"
-#'output <- str_to_snake_case(input)
-#'print(output)
+#str_to_snake_case("string of words")
+#'
+#'output <- str_to_snake_case("StringOfWords")
 #' 
-#'input <- "StringOfWords"
-#'output <- str_to_snake_case(input)
-#'print(output)
+#'output <- str_to_snake_case("s!t$ring of %char^&act*ers")
 #' 
-#'input <- "s!t$ring of %char^&act*ers"
-#'output <- str_to_snake_case(input)
-#'print(output)
-#' 
-#'input <- c("multiples of strings", "strings in a multiples", "many strings")
-#'output <- str_to_snake_case(input)
-#'print(output)
+#str_to_snake_case(c("multiples of strings", "strings in a multiples", "many strings"))
 #' 
 str_to_snake_case <- function(x) {
   snake_case_string <- gsub("[^A-Za-z0-9_ ]", "", x)

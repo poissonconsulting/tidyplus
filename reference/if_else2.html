@@ -65,15 +65,15 @@ When searching character vectors an alternative solution is to use
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>condition</dt>
-<dd><p>Logical vector</p></dd>
+<dd><p>A logical vector</p></dd>
 
 
 <dt>true, false</dt>
-<dd><p>Values to use for <code>TRUE</code> and <code>FALSE</code> values of
-<code>condition</code>. They must be either the same length as <code>condition</code>,
-or length 1. They must also be the same type: <code>if_else()</code> checks that
-they have the same type and same class. All other attributes are
-taken from <code>true</code>.</p></dd>
+<dd><p>Vectors to use for <code>TRUE</code> and <code>FALSE</code> values of
+<code>condition</code>.</p>
+<p>Both <code>true</code> and <code>false</code> will be <a href="https://vctrs.r-lib.org/reference/vector_recycling_rules.html" class="external-link">recycled</a>
+to the size of <code>condition</code>.</p>
+<p><code>true</code>, <code>false</code>, and <code>missing</code> (if used) will be cast to their common type.</p></dd>
 
 </dl></div>
     <div id="value">

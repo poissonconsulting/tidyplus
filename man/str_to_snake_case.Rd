@@ -7,7 +7,7 @@
 str_to_snake_case(x)
 }
 \arguments{
-\item{x}{input string or mutliple strings to be converted to snake case}
+\item{x}{input string or multiple strings to be converted to snake case}
 }
 \value{
 string or strings converted to snake_case
@@ -16,20 +16,12 @@ string or strings converted to snake_case
 Converts strings to Snake Case
 }
 \examples{
-input <- "string of words"
-output <- str_to_snake_case(input)
-print(output)
+str_to_snake_case("string of words")
 
-input <- "StringOfWords"
-output <- str_to_snake_case(input)
-print(output)
+str_to_snake_case("StringOfWords")
 
-input <- "s!t$ring of \%char^&act*ers"
-output <- str_to_snake_case(input)
-print(output)
+str_to_snake_case("s!t$ring of \%char^&act*ers")
 
-input <- c("multiples of strings", "strings in a multiples", "many strings")
-output <- str_to_snake_case(input)
-print(output)
+str_to_snake_case(c("multiples of strings", "strings in a multiples", "many strings"))
 
 }

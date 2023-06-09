@@ -12,7 +12,7 @@
 #' 
 #'str_to_snake_case("s!t$ring of %char^&act*ers")
 #' 
-#'str_to_snake_case(c("multiples of strings", "strings in a multiples", "many strings"))
+#'str_to_snake_case(c("multiples of strings", "strings in multiple", "many strings"))
 #' 
 str_to_snake_case <- function(x) {
   snake_case_string <- gsub("[^A-Za-z0-9_ ]", "", x)

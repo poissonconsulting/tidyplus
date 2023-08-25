@@ -22,8 +22,7 @@ str_replace_vec <- function(string, replace) {
   chk_character(string)
   chk_character(replace)
   chk_named(replace)
-  chk_not_any_na(replace)
-  
+
   if(!length(replace)) return(string)
 
   pattern <- names(replace)

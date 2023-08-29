@@ -18,12 +18,10 @@ A character vector the same length as
 \code{string}/\code{pattern}/\code{replacement}.
 }
 \description{
-String replace multiple strings in a column by providing a named character
-vector of patterns and their respective replacements.
+String replace multiple strings in a vector.
 }
 \details{
-\code{str_replace_vec()}, which performs multiple replacements to the first
-pattern match in a string is the vectorized form of \code{\link[stringr:str_replace]{stringr::str_replace()}}.
+\code{str_replace_vec()} is a vectorized form of \code{\link[stringr:str_replace]{stringr::str_replace()}}.
 
 This is different from passing a named vector to \code{\link[stringr:str_replace]{stringr::str_replace_all}},
 which performs multiple replacements but to all pattern matches in a string.

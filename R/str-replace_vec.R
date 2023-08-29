@@ -1,10 +1,8 @@
 #' String replace multiple strings
 #' 
-#' String replace multiple strings in a column by providing a named character 
-#' vector of patterns and their respective replacements.
+#' String replace multiple strings in a vector. 
 #'
-#' `str_replace_vec()`, which performs multiple replacements to the first 
-#' pattern match in a string is the vectorized form of [`stringr::str_replace()`].
+#' `str_replace_vec()` is a vectorized form of [`stringr::str_replace()`].
 #' 
 #' This is different from passing a named vector to [`stringr::str_replace_all`], 
 #' which performs multiple replacements but to all pattern matches in a string.

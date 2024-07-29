@@ -4,12 +4,12 @@
 \alias{duplicates}
 \title{Find duplicate rows in a data frame}
 \usage{
-duplicates(x, cols = colnames(x))
+duplicates(.data, ...)
 }
 \arguments{
-\item{x}{A data.frame.}
+\item{.data}{A data.frame.}
 
-\item{cols}{A character vector of the column names.}
+\item{...}{Optional column names to use when searching for duplicate rows in specific columns.}
 }
 \value{
 A tibble containing only duplicate rows.

@@ -5,28 +5,34 @@
 #' columns) will be searched for duplicate rows. If column names are provided,
 #' only the specified columns will be searched for duplicate rows.
 #' 
-#' @param x A data.frame.
-#' @param cols A character vector of the column names.
+#' @param .data A data.frame.
+#' @param ... Optional column names to use when searching for duplicate rows in specific columns.
 #' @return A tibble containing only duplicate rows.
 #' @export
-duplicates <- function(x, cols = colnames(x)) {
-  check_data(x)
-  chk_vector(cols)
-  check_values(cols, "")
-  check_names(x, cols)
+duplicates <- function(.data, ...) {
+  check_data(.data)
   
-  x <- tibble::as_tibble(x)
-  
-  cols <- unique(cols)
-  
-  if (!length(cols)) {
-    return(x)
+  col <- rlang::ensyms(...)
+  if (length(col) == 0) {
+    col_names <- colnames(.data)
+  } else {
+    col_names <- vapply(col, rlang::as_string, character(1))
   }
+  col_names <- unique(col_names)
+  chk_vector(col_names)
+  check_values(col_names, "")
+  check_names(.data, col_names)
   
-  y <- x[cols]
-  y <- y[duplicated(y), , drop = FALSE]
-  y <- unique(y)
-  x <- merge(x, y, by = cols)
-  x <- dplyr::as_tibble(x)
-  x
+  if (!length(col_names)) {
+    return(.data)
+  }
+  .data_dup <- dplyr::select(.data, dplyr::all_of(col_names))
+  print(.data_dup)
+  .data_dup <- .data_dup[duplicated(.data_dup), , drop = FALSE]
+  print(.data_dup)
+  .data_dup <- unique(.data_dup)
+  print(.data_dup)
+  .data <- merge(.data, .data_dup, by = col_names)
+  .data <- dplyr::as_tibble(.data)
+  .data
 }

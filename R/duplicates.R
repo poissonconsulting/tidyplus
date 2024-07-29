@@ -1,8 +1,13 @@
-#' Duplicates
+#' Find duplicate rows in a data frame
 #'
+#' Finds duplicate rows within a data frame. Column names can optionally be
+#' provided. If column names aren't provided, the entire data frame (all
+#' columns) will be searched for duplicate rows. If column names are provided,
+#' only the specified columns will be searched for duplicate rows.
+#' 
 #' @param x A data.frame.
 #' @param cols A character vector of the column names.
-#' @return A tibble with just the duplicate rows included.
+#' @return A tibble containing only duplicate rows.
 #' @export
 duplicates <- function(x, cols = colnames(x)) {
   check_data(x)

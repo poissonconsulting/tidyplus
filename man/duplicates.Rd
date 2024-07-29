@@ -2,7 +2,7 @@
 % Please edit documentation in R/duplicates.R
 \name{duplicates}
 \alias{duplicates}
-\title{Duplicates}
+\title{Find duplicate rows in a data frame}
 \usage{
 duplicates(x, cols = colnames(x))
 }
@@ -12,8 +12,11 @@ duplicates(x, cols = colnames(x))
 \item{cols}{A character vector of the column names.}
 }
 \value{
-A tibble with just the duplicate rows included.
+A tibble containing only duplicate rows.
 }
 \description{
-Duplicates
+Finds duplicate rows within a data frame. Column names can optionally be
+provided. If column names aren't provided, the entire data frame (all
+columns) will be searched for duplicate rows. If column names are provided,
+only the specified columns will be searched for duplicate rows.
 }

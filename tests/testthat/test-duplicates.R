@@ -3,16 +3,69 @@ test_that("returns only duplicated rows of selected columns", {
   expect_identical(duplicates(tib), tib[c(1, 3), ])
   expect_identical(duplicates(as.data.frame(tib)), tib[c(1, 3), ])
   
-  expect_equal(
+  expect_identical(
     duplicates(data.frame(x = c(1, 2, 1), y = 1:3), x),
-    dplyr::tibble(x = c(1, 1), y = c(1, 3))
+    dplyr::tibble(x = c(1, 1), y = c(1L, 3L))
+  )
+  
+  expect_identical(
+    duplicates(data.frame(x = c(1, 2, 1), y = 1:3), x, y),
+    dplyr::tibble(x = double(0), y = integer(0))
+  )
+})
+
+test_that("keep_all working", {
+  data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
+  expect_identical(duplicates(data, y),
+                   tibble::tibble(x = c(1,2,1), y = c(1,1,1)))
+  expect_identical(duplicates(data, x, y),
+                   tibble::tibble(x = c(1,1), y = c(1,1)))
+  expect_identical(duplicates(data, y, x),
+                   tibble::tibble(x = c(1,1), y = c(1,1)))
+  expect_identical(duplicates(data),
+                   tibble::tibble(x = c(1,1), y = c(1,1)))
+  expect_identical(duplicates(data, y, .keep_all = FALSE),
+                   tibble::tibble(y = c(1,1,1)))
+})
+
+
+test_that("handles data frame with no rows", {
+  data <- dplyr::tibble(x = integer(), y = integer())
+
+  expect_equal(
+    duplicates(data),
+    data
   )
   
   expect_equal(
-    duplicates(data.frame(x = c(1, 2, 1), y = 1:3), x, y),
-    dplyr::tibble(x = double(0), y = double(0))
+    duplicates(data, x),
+    data
+  )
+  
+  expect_equal(
+    duplicates(data, x, .keep_all = FALSE),
+    dplyr::tibble(x = integer())
   )
 })
+
+test_that("handles data frame with no colums", {
+  data <- dplyr::tibble()
+  
+  expect_identical(
+    duplicates(data),
+    data
+  )
+
+  expect_identical(
+    duplicates(data, .keep_all = FALSE),
+    data
+  )
+})
+
+# test_that("handles columns with missing values", {
+#   data <- tibble::tibble(x = c(1,2,NA,1), y = c(1,1,NA,NA))
+#   expect_identical(duplicates(data, y),
+# })
 
 test_that("errors when no input argument is supplied", {
   expect_error(

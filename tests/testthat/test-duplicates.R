@@ -81,12 +81,11 @@ test_that("handles columns with missing values", {
   )
 })
 
-test_that("errors when no input argument is supplied", {
-  expect_error(
-    duplicates(),
-    'argument ".data" is missing, with no default',
-    fixed = TRUE
-  )
+test_that("handles data set with no duplicates", {
+  data <- tibble::tibble(x = c(1,2,NA), z = 1:3)
+  expect_identical(duplicates(data), tibble::tibble(x = double(), z = integer()))
+  expect_identical(duplicates(data, x), tibble::tibble(x = double(), z = integer()))
+  expect_identical(duplicates(data, x, .keep_all = FALSE), tibble::tibble(x = double()))
 })
 
 test_that("errors when input argument is not a data.frame", {

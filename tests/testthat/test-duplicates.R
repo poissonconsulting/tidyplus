@@ -48,7 +48,7 @@ test_that("handles data frame with no rows", {
   )
 })
 
-test_that("handles data frame with no colums", {
+test_that("handles data frame with no columns", {
   data <- dplyr::tibble()
   
   expect_identical(
@@ -62,10 +62,24 @@ test_that("handles data frame with no colums", {
   )
 })
 
-# test_that("handles columns with missing values", {
-#   data <- tibble::tibble(x = c(1,2,NA,1), y = c(1,1,NA,NA))
-#   expect_identical(duplicates(data, y),
-# })
+test_that("handles columns with missing values", {
+  data <- tibble::tibble(x = c(1,2,NA,1,1), y = c(1,1,NA,NA,NA))
+  
+  expect_identical(
+    duplicates(data),
+    tibble::tibble(x = c(1, 1), y = as.double(c(NA, NA)))
+  )
+  
+  expect_identical(
+    duplicates(data, y),
+    data
+  )
+  
+  expect_identical(
+    duplicates(data, y, .keep_all = FALSE),
+    tibble::tibble(y = c(1, 1, NA, NA, NA))
+  )
+})
 
 test_that("errors when no input argument is supplied", {
   expect_error(

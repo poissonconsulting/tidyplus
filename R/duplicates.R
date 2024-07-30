@@ -3,7 +3,7 @@
 #' Keeps only non-unique rows within a data frame.
 #' 
 #' @param .data A data.frame.
-#' @param ... Optional variables to use when determine non-uniqueness.
+#' @param ... Optional variables to use when determining non-uniqueness.
 #'  If omitted, will use all variables in the data frame.
 #' @param .keep_all A flag specifying whether to keep all variables in .data.
 #' @return The original data frame with only non-unique rows.

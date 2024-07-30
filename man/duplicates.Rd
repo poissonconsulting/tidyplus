@@ -9,7 +9,7 @@ duplicates(.data, ..., .keep_all = TRUE)
 \arguments{
 \item{.data}{A data.frame.}
 
-\item{...}{Optional variables to use when determine non-uniqueness.
+\item{...}{Optional variables to use when determining non-uniqueness.
 If omitted, will use all variables in the data frame.}
 
 \item{.keep_all}{A flag specifying whether to keep all variables in .data.}

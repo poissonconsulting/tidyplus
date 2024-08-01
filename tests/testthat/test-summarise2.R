@@ -4,7 +4,9 @@ test_that("multiple groups do not produce message", {
     id = c(1, 1, 2, 2),
     value = c(10, 4, 20, 6)
   )
-  output <- df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
+  output <- df |>
+    dplyr::group_by(group, id) |>
+    summarise2(mean = mean(value))
   expect_equal(
     output,
     data.frame(
@@ -60,7 +62,9 @@ test_that("same data output as summarise with two groups", {
     id = c(1, 1, 2, 2),
     value = c(10, 4, 20, 6)
   )
-  output <- df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
+  output <- df |>
+    dplyr::group_by(group, id) |>
+    summarise2(mean = mean(value))
   orginal <- suppressMessages(
     df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
   )
@@ -84,7 +88,9 @@ test_that("same data output as summarise with one group", {
     id = c(1, 1, 2, 2),
     value = c(10, 4, 20, 6)
   )
-  output <- df |> dplyr::group_by(group) |> summarise2(mean = mean(value))
+  output <- df |>
+    dplyr::group_by(group) |>
+    summarise2(mean = mean(value))
   orginal <- suppressMessages(
     df |> dplyr::group_by(group) |> dplyr::summarise(mean = mean(value))
   )
@@ -101,7 +107,7 @@ test_that("same data output as summarise with one group", {
 test_that("summarise2 returns empty dataframe same as dplyr::summarise", {
   expect_identical(summarise2(data.frame()), dplyr::summarise(data.frame()))
   expect_identical(summarise2(dplyr::tibble()), dplyr::summarise(dplyr::tibble()))
-  
+
   expect_identical(summarize2(data.frame()), dplyr::summarise(data.frame()))
   expect_identical(summarize2(dplyr::tibble()), dplyr::summarise(dplyr::tibble()))
 })

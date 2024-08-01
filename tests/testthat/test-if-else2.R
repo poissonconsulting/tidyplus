@@ -5,7 +5,7 @@ test_that("scalar true and false are vectorised", {
 
 test_that("vector true and false are ok", {
   x <- c(-1, 0, 1)
-  
+
   expect_identical(if_else2(x < 0, x, 0), c(-1, 0, 0))
   expect_identical(if_else2(x > 0, x, 0), c(0, 0, 1))
 })
@@ -21,7 +21,7 @@ test_that("missing values are replaced", {
 
 test_that("works with lists", {
   x <- list(1, 2, 3)
-  
+
   expect_equal(
     if_else2(c(TRUE, TRUE, FALSE), x, list(NULL)),
     list(1, 2, NULL)

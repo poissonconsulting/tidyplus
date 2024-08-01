@@ -1,11 +1,11 @@
 #' Extract the only distinct value from a vector
-#' 
-#' Extracts the only distinct value from an atomic vector 
+#'
+#' Extracts the only distinct value from an atomic vector
 #' or throws an informative error if no values or multiple distinct values.
-#' 
-#' `only()` is useful when summarizing a vector by group 
+#'
+#' `only()` is useful when summarizing a vector by group
 #' while checking the assumption that it is constant within the group.
-#' 
+#'
 #' @param x  An atomic vector.
 #' @param na_rm A flag indicating whether to exclude missing values.
 #' @return The only distinct value from a vector otherwise throws an error.
@@ -22,21 +22,21 @@ only <- function(x, na_rm = FALSE) {
   chk_vector(x)
   chk_atomic(x)
   chk_flag(na_rm)
-  
-  if(length(x) == 0) {
+
+  if (length(x) == 0) {
     rlang::abort("`x` must have at least 1 element.")
   }
 
-  if(na_rm) {
+  if (na_rm) {
     x <- x[!is.na(x)]
-    if(length(x) == 0) {
+    if (length(x) == 0) {
       rlang::abort("`x` must have at least 1 non-missing element.")
     }
   }
 
-  if(length(unique(x)) != 1) {
+  if (length(unique(x)) != 1) {
     rlang::abort("`x` must only have 1 distinct value.")
   }
-  
+
   x[1]
 }

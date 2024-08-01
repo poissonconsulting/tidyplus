@@ -61,7 +61,11 @@ test_that("coalesce_data quiet = FALSE", {
   data <- data.frame(x = 1, y = 2, z = 3, a = 4)
   coalesce <- list(z = c("y", "x"), d = c("z", "a"))
   new <- data.frame(d = 2)
-  expect_message(expect_message(coalesce_data(data, coalesce = coalesce, quiet = FALSE),
-                                "Coalesced 'z' from: 'y' and 'x'"),
-                 "Coalesced 'd' from: 'z' and 'a'")
+  expect_message(
+    expect_message(
+      coalesce_data(data, coalesce = coalesce, quiet = FALSE),
+      "Coalesced 'z' from: 'y' and 'x'"
+    ),
+    "Coalesced 'd' from: 'z' and 'a'"
+  )
 })

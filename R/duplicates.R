@@ -1,16 +1,16 @@
 #' Keep non-unique rows in a data frame
 #'
 #' Keeps only non-unique rows within a data frame.
-#' 
+#'
 #' @param .data A data.frame.
 #' @param ... Optional variables to use when determining non-uniqueness.
 #'  If omitted, will use all variables in the data frame.
 #' @param .keep_all A flag specifying whether to keep all variables in .data.
 #' @return The original data frame with only non-unique rows.
 #' @export
-#' @examples 
-#' data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
-#' 
+#' @examples
+#' data <- tibble::tibble(x = c(1, 2, 1, 1), y = c(1, 1, 1, 5))
+#'
 #' duplicates(data)
 #' duplicates(data, x)
 #' duplicates(data, y)
@@ -19,7 +19,7 @@
 duplicates <- function(.data, ..., .keep_all = TRUE) {
   check_data(.data)
   chk_flag(.keep_all)
-  
+
   col <- rlang::ensyms(...)
   if (length(col) == 0) {
     col_names <- colnames(.data)
@@ -30,7 +30,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   chk_vector(col_names)
   check_values(col_names, "")
   check_names(.data, col_names)
-  
+
   if (!length(col_names)) {
     return(.data)
   }
@@ -38,7 +38,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   .data_dup <- .data_dup[duplicated(.data_dup), , drop = FALSE]
   .data_dup <- unique(.data_dup)
   .data <- dplyr::inner_join(.data, .data_dup, by = col_names)
-  if(!(.keep_all)) {
+  if (!(.keep_all)) {
     .data <- dplyr::select(.data, dplyr::all_of(col_names))
   }
   .data <- dplyr::as_tibble(.data)

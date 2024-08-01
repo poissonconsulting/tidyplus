@@ -12,7 +12,7 @@ if_else2(condition, true, false)
 \item{true, false}{Vectors to use for \code{TRUE} and \code{FALSE} values of
 \code{condition}.
 
-Both \code{true} and \code{false} will be \link[vctrs:vector_recycling_rules]{recycled}
+Both \code{true} and \code{false} will be \link[vctrs:theory-faq-recycling]{recycled}
 to the size of \code{condition}.
 
 \code{true}, \code{false}, and \code{missing} (if used) will be cast to their common type.}

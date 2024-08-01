@@ -11,7 +11,7 @@ Description: Provides functions such as str_crush(), add_missing_column(),
   or functions that provide alternative behaviors such as if_else2()
   and str_detect2().
 License: MIT + file LICENSE
-URL: https://github.com/poissonconsulting/tidyplus
+URL: https://poissonconsulting.github.io/tidyplus/, https://github.com/poissonconsulting/tidyplus
 BugReports: https://github.com/poissonconsulting/tidyplus/issues
 Depends: 
     R (>= 3.6)

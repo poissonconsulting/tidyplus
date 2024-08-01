@@ -11,6 +11,7 @@ Provides functions such as str_crush(), add_missing_column(), coalesce_data() an
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://poissonconsulting.github.io/tidyplus/}
   \item \url{https://github.com/poissonconsulting/tidyplus}
   \item Report bugs at \url{https://github.com/poissonconsulting/tidyplus/issues}
 }

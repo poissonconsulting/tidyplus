@@ -1,5 +1,24 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus 0.1.0
+
+- Merge pull request #16 from poissonconsulting/str_replace_when.
+
+  Str replace when function
+
+- Merge pull request #17 from poissonconsulting/duplicate.
+
+  Transferred `duplicates()` from poisdata
+
+- Merge pull request #14 from poissonconsulting/snakecase.
+
+  Snakecase
+
+- Merge pull request #13 from poissonconsulting/summarize2.
+
+  Summarise2
+
+
 # tidyplus 0.0.3
 
 - Merge pull request #16 from poissonconsulting/str_replace_when.

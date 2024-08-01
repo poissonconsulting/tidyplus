@@ -7,10 +7,6 @@
 - Added the `str_to_snake_case()` function. 
 - Added the `summarise2()` function.
 
-# tidyplus 0.0.2.9000
-
-- Same as previous version.
-
 
 # tidyplus 0.0.2
 

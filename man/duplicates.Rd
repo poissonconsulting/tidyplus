@@ -2,21 +2,30 @@
 % Please edit documentation in R/duplicates.R
 \name{duplicates}
 \alias{duplicates}
-\title{Find duplicate rows in a data frame}
+\title{Keep non-unique rows in a data frame}
 \usage{
-duplicates(.data, ...)
+duplicates(.data, ..., .keep_all = TRUE)
 }
 \arguments{
 \item{.data}{A data.frame.}
 
-\item{...}{Optional column names to use when searching for duplicate rows in specific columns.}
+\item{...}{Optional variables to use when determining non-uniqueness.
+If omitted, will use all variables in the data frame.}
+
+\item{.keep_all}{A flag specifying whether to keep all variables in .data.}
 }
 \value{
-A tibble containing only duplicate rows.
+The original data frame with only non-unique rows.
 }
 \description{
-Finds duplicate rows within a data frame. Column names can optionally be
-provided. If column names aren't provided, the entire data frame (all
-columns) will be searched for duplicate rows. If column names are provided,
-only the specified columns will be searched for duplicate rows.
+Keeps only non-unique rows within a data frame.
+}
+\examples{
+data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
+
+duplicates(data)
+duplicates(data, x)
+duplicates(data, y)
+duplicates(data, x, y)
+duplicates(data, y, .keep_all = FALSE)
 }

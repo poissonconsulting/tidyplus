@@ -1,16 +1,24 @@
-#' Find duplicate rows in a data frame
+#' Keep non-unique rows in a data frame
 #'
-#' Finds duplicate rows within a data frame. Column names can optionally be
-#' provided. If column names aren't provided, the entire data frame (all
-#' columns) will be searched for duplicate rows. If column names are provided,
-#' only the specified columns will be searched for duplicate rows.
+#' Keeps only non-unique rows within a data frame.
 #' 
 #' @param .data A data.frame.
-#' @param ... Optional column names to use when searching for duplicate rows in specific columns.
-#' @return A tibble containing only duplicate rows.
+#' @param ... Optional variables to use when determining non-uniqueness.
+#'  If omitted, will use all variables in the data frame.
+#' @param .keep_all A flag specifying whether to keep all variables in .data.
+#' @return The original data frame with only non-unique rows.
 #' @export
-duplicates <- function(.data, ...) {
+#' @examples 
+#' data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
+#' 
+#' duplicates(data)
+#' duplicates(data, x)
+#' duplicates(data, y)
+#' duplicates(data, x, y)
+#' duplicates(data, y, .keep_all = FALSE)
+duplicates <- function(.data, ..., .keep_all = TRUE) {
   check_data(.data)
+  chk_flag(.keep_all)
   
   col <- rlang::ensyms(...)
   if (length(col) == 0) {
@@ -27,12 +35,12 @@ duplicates <- function(.data, ...) {
     return(.data)
   }
   .data_dup <- dplyr::select(.data, dplyr::all_of(col_names))
-  print(.data_dup)
   .data_dup <- .data_dup[duplicated(.data_dup), , drop = FALSE]
-  print(.data_dup)
   .data_dup <- unique(.data_dup)
-  print(.data_dup)
-  .data <- merge(.data, .data_dup, by = col_names)
+  .data <- dplyr::inner_join(.data, .data_dup, by = col_names)
+  if(!(.keep_all)) {
+    .data <- dplyr::select(.data, dplyr::all_of(col_names))
+  }
   .data <- dplyr::as_tibble(.data)
   .data
 }

@@ -9,7 +9,6 @@
 #' @return The original data frame with only non-unique rows.
 #' @export
 #' @examples 
-# add_column ---------------------------------
 #' data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
 #' 
 #' duplicates(data)

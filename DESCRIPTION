@@ -2,8 +2,10 @@ Package: tidyplus
 Title: Additional 'tidyverse' Functions
 Version: 0.1.0
 Authors@R: c(
-    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = c("aut", "cre"),
+    person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = "aut",
            comment = c(ORCID = "0000-0002-7683-4592")),
+    person("Ayla", "Pearson", , "ayla@poissonconsulting.ca", role = "cre",
+           comment = c(ORCID = "0000-0001-7388-1222")),       
     person("Poisson Consulting", role = c("cph", "fnd"))
   )
 Description: Provides functions such as str_crush(), add_missing_column(), 

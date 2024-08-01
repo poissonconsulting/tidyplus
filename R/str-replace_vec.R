@@ -8,7 +8,7 @@
 #' which performs multiple replacements but to all pattern matches in a string.
 #' 
 #' @param replace A character vector where the names are the patterns to look
-#' for and the values are the replacement values (c(pattern1 = replacement1))
+#' for and the values are the replacement values `(c(pattern1 = replacement1))`
 #' @inherit stringr::str_replace
 #' @seealso [`stringr::str_replace()`] and [`stringr::str_replace_all()`]
 #' @export

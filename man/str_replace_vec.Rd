@@ -11,7 +11,7 @@ str_replace_vec(string, replace)
 coercible to one.}
 
 \item{replace}{A character vector where the names are the patterns to look
-for and the values are the replacement values (c(pattern1 = replacement1))}
+for and the values are the replacement values \code{(c(pattern1 = replacement1))}}
 }
 \value{
 A character vector the same length as

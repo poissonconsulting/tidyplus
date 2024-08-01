@@ -6,8 +6,17 @@ test_that("special cases are correct", {
 })
 
 test_that("vectorised patterns work", {
-  expect_equal(str_detect2("ab", c("a", "b", "c")), c(T, T, F))
-  expect_equal(str_detect2(c("ca", "ab"), c("a", "c")), c(T, F))
+  expect_equal(
+    str_detect2("ab", c("a", "b", "c")),
+    c(TRUE, TRUE, FALSE)
+  )
+  expect_equal(
+    str_detect2(c("ca", "ab"), c("a", "c")),
+    c(TRUE, FALSE)
+  )
 
-  expect_equal(str_detect2("ab", c("a", "b", "c"), negate = TRUE), c(F, F, T))
+  expect_equal(
+    str_detect2("ab", c("a", "b", "c"), negate = TRUE),
+    c(FALSE, FALSE, TRUE)
+  )
 })

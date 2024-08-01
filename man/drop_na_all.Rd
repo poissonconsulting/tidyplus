@@ -20,7 +20,8 @@ This is a convenient way to drop uninformative rows from a data frame.
 }
 \examples{
 data <- tibble::tibble(
-  a = c(NA, NA, NA), b = c(1, 1, NA), c = c(2, NA, NA))
+  a = c(NA, NA, NA), b = c(1, 1, NA), c = c(2, NA, NA)
+)
 
 drop_na_all(data)
 drop_na_all(data, a, c)

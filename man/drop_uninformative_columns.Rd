@@ -21,8 +21,9 @@ if \code{na_distinct = FALSE} also drop columns which all have one value and/or 
 }
 \examples{
 data <- tibble::tibble(
-  a = c(1,1,1), x = c(NA, NA, NA), b = c(1, 1, NA), 
-  z = c(1, 2, 2), e = c(1, 2, NA))
+  a = c(1, 1, 1), x = c(NA, NA, NA), b = c(1, 1, NA),
+  z = c(1, 2, 2), e = c(1, 2, NA)
+)
 
 drop_uninformative_columns(data)
 drop_uninformative_columns(data, na_distinct = FALSE)

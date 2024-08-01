@@ -20,9 +20,10 @@ and then collapsing into a single string using the '. ' separator.
 collapse_comments("Saw fish", character(0), "Nice. .", NA_character_)
 
 data <- data.frame(
-  visit = c(1,1,2, 2), 
+  visit = c(1, 1, 2, 2),
   fish = 1:4,
-  comment = c("Sunny day.  ", "Skinny fish", "Lost boot", NA))
+  comment = c("Sunny day.  ", "Skinny fish", "Lost boot", NA)
+)
 
 \dontrun{
 data |>

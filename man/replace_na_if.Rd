@@ -25,13 +25,15 @@ Unlike \code{\link[tidyr:replace_na]{tidyr::replace_na()}}, it is only defined f
 }
 \examples{
 data <- tibble::tibble(
-  x = c(TRUE, FALSE, NA), 
-  y = c("x is false", NA, "x is false"))
-  
+  x = c(TRUE, FALSE, NA),
+  y = c("x is false", NA, "x is false")
+)
+
 dplyr::mutate(data,
-    x1 = tidyr::replace_na(x, FALSE),
-    x3 = if_else2(is.na(x) & y == "x is false", FALSE, x),
-    x4 = replace_na_if(x, y == "x is false", FALSE))
+  x1 = tidyr::replace_na(x, FALSE),
+  x3 = if_else2(is.na(x) & y == "x is false", FALSE, x),
+  x4 = replace_na_if(x, y == "x is false", FALSE)
+)
 }
 \seealso{
 \code{\link[tidyr:replace_na]{tidyr::replace_na()}} and \code{\link[=if_else2]{if_else2()}}

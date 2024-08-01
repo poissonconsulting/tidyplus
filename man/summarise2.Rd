@@ -116,15 +116,19 @@ The following methods are currently available in loaded packages:
 }
 
 \examples{
- df <- data.frame(
-  group = c("A", "A", "B", "B"), 
-  id = c(1, 1, 2, 2), 
+df <- data.frame(
+  group = c("A", "A", "B", "B"),
+  id = c(1, 1, 2, 2),
   value = c(10, 4, 20, 6)
- )
+)
 # summarise2 doesn't produce message about groups
-df |> dplyr::group_by(group, id) |> summarise2(mean = mean(value))
+df |>
+  dplyr::group_by(group, id) |>
+  summarise2(mean = mean(value))
 # summarise doesn't retain all the groups set in `group_by`
-df |> dplyr::group_by(group, id) |> dplyr::summarise(mean = mean(value))
+df |>
+  dplyr::group_by(group, id) |>
+  dplyr::summarise(mean = mean(value))
 }
 \seealso{
 \code{\link[dplyr:summarise]{dplyr::summarise()}} and \code{\link[dplyr:summarise]{dplyr::summarize()}}

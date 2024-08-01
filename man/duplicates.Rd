@@ -21,7 +21,7 @@ The original data frame with only non-unique rows.
 Keeps only non-unique rows within a data frame.
 }
 \examples{
-data <- tibble::tibble(x = c(1,2,1,1), y = c(1,1,1,5))
+data <- tibble::tibble(x = c(1, 2, 1, 1), y = c(1, 1, 1, 5))
 
 duplicates(data)
 duplicates(data, x)

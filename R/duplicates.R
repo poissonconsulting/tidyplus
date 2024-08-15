@@ -27,6 +27,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
     col_names <- vapply(col, rlang::as_string, character(1))
   }
   col_names <- unique(col_names)
+  
   chk_vector(col_names)
   check_values(col_names, "")
   check_names(.data, col_names)
@@ -34,13 +35,43 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   if (!length(col_names)) {
     return(.data)
   }
+  
+  grouped <- dplyr::is_grouped_df(.data)
+  groups <- dplyr::group_vars(.data)
+  groups_sym <- rlang::syms(groups)
+  
   .data_dup <- dplyr::select(.data, dplyr::all_of(col_names))
   .data_dup <- .data_dup[duplicated(.data_dup), , drop = FALSE]
   .data_dup <- unique(.data_dup)
-  .data <- dplyr::inner_join(.data, .data_dup, by = col_names)
+  
+  is_sf = any(class(.data) == "sf")
+  if(is_sf)
+  {
+    .data <- poisspatial::ps_sfc_to_coords(.data)
+    .data_dup <- poisspatial::ps_sfc_to_coords(.data_dup)
+    if (any(col_names == "geometry")) {
+      col_names <- col_names[col_names != "geometry"]
+      col_names <- c(col_names, "X", "Y")
+    }
+  }
+  
+  .data <- dplyr::inner_join(.data, .data_dup, by = col_names) 
   if (!(.keep_all)) {
     .data <- dplyr::select(.data, dplyr::all_of(col_names))
   }
+  
+  if(is_sf) {
+    .data <- poisspatial::ps_coords_to_sfc(.data)
+  }
+  
   .data <- dplyr::as_tibble(.data)
+  
+  if(is_sf) {
+    .data <- poisspatial::ps_activate_sfc(.data)
+  }
+  
+  if (grouped) {
+      .data <- dplyr::group_by(.data, !!!groups_sym)
+  }
   .data
 }

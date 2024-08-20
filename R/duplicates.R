@@ -58,7 +58,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
     .data <- dplyr::group_by(.data, !!!groups_sym)
   }
   if (is_sf) {
-    .data <- poisspatial::ps_activate_sfc(.data, sfc_name = col_name_sf)
+    .data <- sf::st_as_sf(.data, sf_column_name = col_name_sf)
   }
   .data
 }

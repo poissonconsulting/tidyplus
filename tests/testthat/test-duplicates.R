@@ -109,6 +109,37 @@ test_that("errors when input argument is not a data.frame", {
 
 test_that("preserves single active geometry column called geometry", {
   skip_if_not_installed("sf")
+  skip_if_not_installed("poisspatial")
   data <- sf::st_sf(a=3, geometry = sf::st_sfc(sf::st_point(1:2)))
+  data <- data[rep(1, 2), ]
+  rownames(data) <- NULL
+  data <- tibble::as_tibble(data)
+  data <- poisspatial::ps_activate_sfc(data)
   expect_identical(data, duplicates(data))
+})
+
+test_that("preserves groups and single active geometry column called earth", {
+  skip_if_not_installed("dplyr")
+  skip_if_not_installed("sf")
+  skip_if_not_installed("poisspatial")
+  
+  data <- data.frame(
+    X = c(1, 2, 2, 3, 3, 4, 4),
+    Y = c(11, 12, 13, 14, 14, 15, 15),
+    a = c("red", "orange", "yellow", "green", "green", "blue", "blue"),
+    b = c("white", "white", "white", "white", "white", "white", "white")
+  )
+  data <- dplyr::group_by(data, a, b)
+  data <- poisspatial::ps_coords_to_sfc(data, sfc_name = "earth")
+  
+  data_dup <- data.frame(
+    X = c(3, 3, 4, 4),
+    Y = c(14, 14, 15, 15),
+    a = c("green", "green", "blue", "blue"),
+    b = c("white", "white", "white", "white")
+  )
+  data_dup <- dplyr::group_by(data_dup, a, b)
+  data_dup <- poisspatial::ps_coords_to_sfc(data_dup, sfc_name = "earth")
+  
+  expect_identical(data_dup, duplicates(data))
 })

@@ -40,6 +40,9 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   groups_sym <- rlang::syms(groups)
   
   is_sf <- any(class(.data) == "sf")
+  if (is_sf) {
+    col_name_sf <- attributes(.data)$sf_column
+  }
   
   .data <- tibble::as_tibble(.data)
   
@@ -55,7 +58,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
     .data <- dplyr::group_by(.data, !!!groups_sym)
   }
   if (is_sf) {
-    .data <- poisspatial::ps_activate_sfc(.data)
+    .data <- poisspatial::ps_activate_sfc(.data, sfc_name = col_name_sf)
   }
   .data
 }

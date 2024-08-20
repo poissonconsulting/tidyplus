@@ -106,3 +106,9 @@ test_that("errors when input argument is not a data.frame", {
   expect_error(duplicates(NULL), "Data.frame must be a data.frame.")
   expect_error(duplicates(NA), "Data.frame must be a data.frame.")
 })
+
+test_that("preserves single active geometry column called geometry", {
+  skip_if_not_installed("sf")
+  data <- sf::st_sf(a=3, geometry = sf::st_sfc(sf::st_point(1:2)))
+  expect_identical(data, duplicates(data))
+})

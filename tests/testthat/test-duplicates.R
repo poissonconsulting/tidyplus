@@ -160,3 +160,33 @@ test_that("preserves single active geometry column called map", {
   
   expect_identical(data_dup, duplicates(data))
 })
+
+test_that("deals with one active geometry column and one inactive geometry column", {
+  skip_if_not_installed("sf")
+  
+  data <- tibble::tibble(
+    X = c(1, 2, 2, 3, 3, 4, 4),
+    Y = c(11, 12, 13, 14, 14, 15, 15),
+    a = c("red", "orange", "yellow", "green", "green", "blue", "blue"),
+    b = c("white", "white", "white", "white", "white", "white", "white"),
+    I = c(101, 102, 102, 103, 103, 104, 104),
+    J = c(1001, 1002, 1003, 1004, 1004, 1005, 1005)
+  )
+  data <- sf::st_as_sf(data, coords = c("X", "Y"))
+  data <- tibble::as_tibble(data)
+  data <- sf::st_as_sf(data, coords = c("I", "J"), sf_column_name = "map")
+  
+  data_dup <- tibble::tibble(
+    X = c(3, 3, 4, 4),
+    Y = c(14, 14, 15, 15),
+    a = c("green", "green", "blue", "blue"),
+    b = c("white", "white", "white", "white"),
+    I = c(103, 103, 104, 104),
+    J = c(1004, 1004, 1005, 1005)
+  )
+  data_dup <- sf::st_as_sf(data_dup, coords = c("X", "Y"))
+  data_dup <- tibble::as_tibble(data_dup)
+  data_dup <- sf::st_as_sf(data_dup, coords = c("I", "J"), sf_column_name = "map")
+  
+  expect_identical(data_dup, duplicates(data))
+})

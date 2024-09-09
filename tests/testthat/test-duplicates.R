@@ -105,6 +105,7 @@ test_that("preserves groups", {
     b = c("white", "white", "white", "white", "white", "white", "white")
   )
   data <- dplyr::group_by(data, a, b)
+  data <- duplicates(data)
   
   data_dup <- tibble::tibble(
     X = c(3, 3, 4, 4),
@@ -114,7 +115,7 @@ test_that("preserves groups", {
   )
   data_dup <- dplyr::group_by(data_dup, a, b)
   
-  expect_identical(data_dup, duplicates(data))
+  expect_identical(data_dup, data)
 })
 
 test_that("preserves single active geometry column called geometry", {
@@ -127,6 +128,7 @@ test_that("preserves single active geometry column called geometry", {
     b = c("white", "white", "white", "white", "white", "white", "white")
   )
   data <- sf::st_as_sf(data, coords = c("X", "Y"))
+  data <- duplicates(data)
   
   data_dup <- tibble::tibble(
     X = c(3, 3, 4, 4),
@@ -136,7 +138,7 @@ test_that("preserves single active geometry column called geometry", {
   )
   data_dup <- sf::st_as_sf(data_dup, coords = c("X", "Y"))
 
-  expect_identical(data_dup, duplicates(data))
+  expect_identical(data_dup, data)
 })
 
 test_that("preserves single active geometry column called map", {
@@ -149,6 +151,7 @@ test_that("preserves single active geometry column called map", {
     b = c("white", "white", "white", "white", "white", "white", "white")
   )
   data <- sf::st_as_sf(data, coords = c("X", "Y"), sf_column_name = "map")
+  data <- duplicates(data)
   
   data_dup <- tibble::tibble(
     X = c(3, 3, 4, 4),
@@ -158,7 +161,7 @@ test_that("preserves single active geometry column called map", {
   )
   data_dup <- sf::st_as_sf(data_dup, coords = c("X", "Y"), sf_column_name = "map")
   
-  expect_identical(data_dup, duplicates(data))
+  expect_identical(data_dup, data)
 })
 
 test_that("deals with one active geometry column and one inactive geometry column", {
@@ -175,6 +178,7 @@ test_that("deals with one active geometry column and one inactive geometry colum
   data <- sf::st_as_sf(data, coords = c("X", "Y"))
   data <- tibble::as_tibble(data)
   data <- sf::st_as_sf(data, coords = c("I", "J"), sf_column_name = "map")
+  data <- duplicates(data)
   
   data_dup <- tibble::tibble(
     X = c(3, 3, 4, 4),
@@ -188,5 +192,5 @@ test_that("deals with one active geometry column and one inactive geometry colum
   data_dup <- tibble::as_tibble(data_dup)
   data_dup <- sf::st_as_sf(data_dup, coords = c("I", "J"), sf_column_name = "map")
   
-  expect_identical(data_dup, duplicates(data))
+  expect_identical(data_dup, data)
 })

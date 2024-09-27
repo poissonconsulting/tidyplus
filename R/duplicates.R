@@ -24,7 +24,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   if (length(col) == 0) {
     col_names <- colnames(.data)
   } else {
-      col_names <- vapply(col, rlang::as_string, character(1))
+    col_names <- vapply(col, rlang::as_string, character(1))
   }
   col_names <- unique(col_names)
   chk_vector(col_names)
@@ -34,23 +34,23 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
   if (!length(col_names)) {
     return(.data)
   }
-  
+
   grouped <- dplyr::is_grouped_df(.data)
   groups <- dplyr::group_vars(.data)
   groups_sym <- rlang::syms(groups)
-  
+
   is_sf <- any(class(.data) == "sf")
   if (is_sf) {
     col_name_sf <- attributes(.data)$sf_column
   }
-  
+
   .data <- tibble::as_tibble(.data)
-  
+
   .data_dup <- dplyr::select(.data, dplyr::all_of(col_names))
   .data_dup <- .data_dup[duplicated(.data_dup), , drop = FALSE]
   .data_dup <- unique(.data_dup)
-  
-  .data <- dplyr::inner_join(.data, .data_dup, by = col_names) 
+
+  .data <- dplyr::inner_join(.data, .data_dup, by = col_names)
   if (!(.keep_all)) {
     .data <- dplyr::select(.data, dplyr::all_of(col_names))
   }

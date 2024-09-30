@@ -46,9 +46,7 @@ coalesce_data <- function(x, coalesce = list(), quiet = FALSE) {
     x <- coalesce_cols(x, coalesce[i], quiet = quiet)
   }
   if (sf) {
-    if (!requireNamespace("sf", quietly = TRUE)) {
-      rlang::abort("sf package is required to preserve sf objects")
-    }
+    rlang::check_installed("sf", reason = "to preserve sf objects.")
     x <- sf::st_as_sf(x)
   }
   x

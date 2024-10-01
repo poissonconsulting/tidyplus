@@ -27,3 +27,11 @@ test_that("works with lists", {
     list(1, 2, NULL)
   )
 })
+
+test_that("throws an informative error when no matches are found", {
+  x <- c(1, 2, 3, 4, 5)
+  expect_error(
+    if_else2(x < 0, 0, x),
+    "No matches found. Did not make any replacements."
+  )
+})

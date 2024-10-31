@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus 0.1.0.9002
+
+- Merge pull request #25 from poissonconsulting/ifelse2.
+
+  Added informative error message to `if_else2()` if no matches are found
+
+
 # tidyplus 0.1.0.9001
 
 - Internal changes.

@@ -4,7 +4,7 @@
 \alias{if_else2}
 \title{Vectorised if else.}
 \usage{
-if_else2(condition, true, false)
+if_else2(condition, true, false, error = FALSE)
 }
 \arguments{
 \item{condition}{A logical vector}
@@ -16,6 +16,8 @@ Both \code{true} and \code{false} will be \link[vctrs:theory-faq-recycling]{recy
 to the size of \code{condition}.
 
 \code{true}, \code{false}, and \code{missing} (if used) will be cast to their common type.}
+
+\item{error}{A logical value. If \code{TRUE}, provides an informative error message if no matches are found.}
 }
 \value{
 Where condition is \code{TRUE}, the matching value from \code{true}, where it's \code{FALSE} or \code{NA}, the matching value from \code{false}.

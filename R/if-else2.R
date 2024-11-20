@@ -36,6 +36,7 @@
 #'   x3 = dplyr::if_else(str_detect2(y, "x is false"), FALSE, x)
 #' )
 if_else2 <- function(condition, true, false, error = FALSE) {
+	chk_flag(error)
   if (!any(condition) & error == TRUE) {
     stop("No matches found. Did not make any replacements.")
   }

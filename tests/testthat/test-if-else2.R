@@ -28,10 +28,26 @@ test_that("works with lists", {
   )
 })
 
-test_that("throws an informative error when no matches are found", {
+test_that("throws an informative error when error = TRUE and no matches are found", {
   x <- c(1, 2, 3, 4, 5)
   expect_error(
-    if_else2(x < 0, 0, x),
+    if_else2(x < 0, 0, x, error = TRUE),
     "No matches found. Did not make any replacements."
+  )
+})
+
+test_that("doesn't throws an informative error when error = TRUE and matches are found", {
+  x <- c(-1, 2, 3, 4, 5)
+  expect_equal(
+    if_else2(x < 0, 0, x, error = TRUE),
+    c(0, 2, 3, 4, 5)
+  )
+})
+
+test_that("doesn't throw an informative error when error = FALSE (the default) and no matches are found", {
+  x <- c(1, 2, 3, 4, 5)
+  expect_equal(
+    if_else2(x < 0, 0, x),
+    x
   )
 })

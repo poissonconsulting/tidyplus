@@ -6,6 +6,7 @@
 #' [`str_detect2()`].
 #'
 #' @inherit dplyr::if_else
+#' @param error A logical value. If `TRUE`, provides an informative error message if no matches are found. 
 #' @return Where condition is `TRUE`, the matching value from `true`, where it's `FALSE` or `NA`, the matching value from `false`.
 #' @seealso [`ifelse()`] and [`dplyr::if_else()`].
 #' @export
@@ -34,8 +35,9 @@
 #' dplyr::mutate(data,
 #'   x3 = dplyr::if_else(str_detect2(y, "x is false"), FALSE, x)
 #' )
-if_else2 <- function(condition, true, false) {
-  if (!any(condition)) {
+if_else2 <- function(condition, true, false, error = FALSE) {
+	chk_flag(error)
+  if (!any(condition) & error == TRUE) {
     stop("No matches found. Did not make any replacements.")
   }
   dplyr::if_else(condition, true, false, missing = false)

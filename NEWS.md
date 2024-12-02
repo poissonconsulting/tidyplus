@@ -1,9 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus 0.1.0.9003
+
+- Added `error = FALSE` argument to `if_else2()`.
+
 # tidyplus 0.1.0.9002
 
 - Added informative error message to `if_else2()` if no matches are found
-
 
 # tidyplus 0.1.0.9001
 

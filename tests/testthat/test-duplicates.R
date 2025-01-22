@@ -119,8 +119,6 @@ test_that("preserves groups", {
 })
 
 test_that("preserves single active geometry column called geometry", {
-  skip_if_not_installed("sf")
-
   data <- tibble::tibble(
     X = c(1, 2, 2, 3, 3, 4, 4),
     Y = c(11, 12, 13, 14, 14, 15, 15),
@@ -142,8 +140,6 @@ test_that("preserves single active geometry column called geometry", {
 })
 
 test_that("preserves single active geometry column called map", {
-  skip_if_not_installed("sf")
-
   data <- tibble::tibble(
     X = c(1, 2, 2, 3, 3, 4, 4),
     Y = c(11, 12, 13, 14, 14, 15, 15),
@@ -165,8 +161,6 @@ test_that("preserves single active geometry column called map", {
 })
 
 test_that("deals with one active geometry column and one inactive geometry column", {
-  skip_if_not_installed("sf")
-
   data <- tibble::tibble(
     X = c(1, 2, 2, 3, 3, 4, 4),
     Y = c(11, 12, 13, 14, 14, 15, 15),

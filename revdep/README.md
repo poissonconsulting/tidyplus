@@ -1,24 +1,32 @@
 # Platform
 
-|field    |value                                                                               |
-|:--------|:-----------------------------------------------------------------------------------|
-|version  |R version 4.2.2 (2022-10-31)                                                        |
-|os       |macOS Ventura 13.0.1                                                                |
-|system   |aarch64, darwin20                                                                   |
-|ui       |RStudio                                                                             |
-|language |(EN)                                                                                |
-|collate  |en_CA.UTF-8                                                                         |
-|ctype    |en_CA.UTF-8                                                                         |
-|tz       |America/Vancouver                                                                   |
-|date     |2022-12-16                                                                          |
-|rstudio  |2022.07.2+576 Spotted Wakerobin (desktop)                                           |
-|pandoc   |2.19.2 @ /Applications/RStudio.app/Contents/MacOS/quarto/bin/tools/ (via rmarkdown) |
+|field    |value                                 |
+|:--------|:-------------------------------------|
+|version  |R version 4.4.2 (2024-10-31)          |
+|os       |macOS Sequoia 15.1.1                  |
+|system   |aarch64, darwin20                     |
+|ui       |RStudio                               |
+|language |(EN)                                  |
+|collate  |en_US.UTF-8                           |
+|ctype    |en_US.UTF-8                           |
+|tz       |America/Vancouver                     |
+|date     |2025-01-21                            |
+|rstudio  |2024.12.0+467 Kousa Dogwood (desktop) |
+|pandoc   |NA                                    |
 
 # Dependencies
 
-|package  |old   |new   |Δ  |
-|:--------|:-----|:-----|:--|
-|tidyplus |0.0.1 |0.0.2 |*  |
+|package  |old        |new    |Δ  |
+|:--------|:----------|:------|:--|
+|tidyplus |0.1.0.9003 |0.2.0  |*  |
+|chk      |NA         |0.10.0 |*  |
+|rlang    |NA         |1.1.4  |*  |
 
 # Revdeps
+
+## New problems (1)
+
+|package   |version    |error |warning |note        |
+|:---------|:----------|:-----|:-------|:-----------|
+|[fwatlasbc](problems.md#fwatlasbc)|0.0.1.9018 |2     |        |1 -1 __+1__ |
 

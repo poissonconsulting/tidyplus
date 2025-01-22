@@ -18,6 +18,7 @@
 #'
 #' unite_str(data, "new", x, y, remove = FALSE)
 unite_str <- function(data, col, ..., sep = ". ", remove = TRUE) {
+  col <- rlang::ensym(col) 
   if (rlang::dots_n(...) == 0) {
     from_vars <- rlang::set_names(seq_along(data), names(data))
   } else {
@@ -26,6 +27,6 @@ unite_str <- function(data, col, ..., sep = ". ", remove = TRUE) {
   data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(from_vars), as.character))
   data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(from_vars), na_if_blank))
   data <- tidyr::unite(data, col = !!col, ..., sep = sep, remove = remove, na.rm = TRUE)
-  data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(col), na_if_blank))
+  data <- dplyr::mutate(data, dplyr::across(tidyselect::all_of(rlang::as_string(col)), na_if_blank))
   data
 }

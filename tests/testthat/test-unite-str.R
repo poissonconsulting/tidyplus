@@ -71,6 +71,7 @@ test_that("unite_str matches same", {
 })
 
 test_that("unite_str matches new sf as string", {
+  skip_if_not_installed("sf")
   data <- dplyr::tribble(
     ~comment, ~comment.x, ~x, ~y,
     "text", NA, 0, 0,

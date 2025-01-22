@@ -41,6 +41,7 @@ duplicates <- function(.data, ..., .keep_all = TRUE) {
 
   is_sf <- any(class(.data) == "sf")
   if (is_sf) {
+    rlang::check_installed("sf", reason = "to preserve sf objects.")
     col_name_sf <- attributes(.data)$sf_column
   }
 

@@ -36,17 +36,17 @@ coalesce_data <- function(x, coalesce = list(), quiet = FALSE) {
   chk_all(coalesce, chk_character)
   chk_all(coalesce, check_dim, values = TRUE)
   chk_all(coalesce, chk_not_any_na)
-
+  
   sf <- vld_s3_class(x, "sf")
 
   if (sf) {
+    rlang::check_installed("sf", reason = "to preserve sf objects.")
     x <- tibble::as_tibble(x)
   }
   for (i in seq_along(coalesce)) {
     x <- coalesce_cols(x, coalesce[i], quiet = quiet)
   }
   if (sf) {
-    rlang::check_installed("sf", reason = "to preserve sf objects.")
     x <- sf::st_as_sf(x)
   }
   x

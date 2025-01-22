@@ -8,7 +8,6 @@ test_that("unite_str works character", {
 
 test_that("unite_str works symbol", {
   data <- tibble::tibble(x = c("good", "Saw fish.", NA), y = c("2021", NA, NA))
-  skip("get unite_str working with symbol!")
   data <- unite_str(data, new, x, y)
   expect_s3_class(data, "tbl_df")
   expect_identical(colnames(data), "new")

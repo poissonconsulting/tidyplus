@@ -13,7 +13,7 @@ Run `revdepcheck::revdep_details(, "fwatlasbc")` for more info
 
 ## Newly broken
 
-*   checking dependencies in R code ...sh: line 1: 35877 Segmentation fault: 11  R_DEFAULT_PACKAGES=NULL '/Library/Frameworks/R.framework/Resources/bin/R' --vanilla --no-echo 2>&1 < '/var/folders/yr/tq_q43k50m795hb4y0njhyth0000gn/T//RtmpsdZi88/file8a3169fd0cf7'
+*   checking dependencies in R code ...sh: line 1: 85129 Segmentation fault: 11  R_DEFAULT_PACKAGES=NULL '/Library/Frameworks/R.framework/Resources/bin/R' --vanilla --no-echo 2>&1 < '/var/folders/yr/tq_q43k50m795hb4y0njhyth0000gn/T//Rtmp6aE6WK/file14c0f2e9e90a1'
     ```
      NOTE
     
@@ -40,7 +40,7 @@ Run `revdepcheck::revdep_details(, "fwatlasbc")` for more info
 
 ## Newly fixed
 
-*   checking dependencies in R code ...sh: line 1: 35876 Segmentation fault: 11  R_DEFAULT_PACKAGES=NULL '/Library/Frameworks/R.framework/Resources/bin/R' --vanilla --no-echo 2>&1 < '/var/folders/yr/tq_q43k50m795hb4y0njhyth0000gn/T//RtmpxbUN9R/file8a0e692feb49'
+*   checking dependencies in R code ...sh: line 1: 84801 Segmentation fault: 11  R_DEFAULT_PACKAGES=NULL '/Library/Frameworks/R.framework/Resources/bin/R' --vanilla --no-echo 2>&1 < '/var/folders/yr/tq_q43k50m795hb4y0njhyth0000gn/T//RtmpGtYlUG/file14ac8640b6448'
     ```
      NOTE
     
@@ -90,7 +90,7 @@ Run `revdepcheck::revdep_details(, "fwatlasbc")` for more info
 
 *   checking tests ...
     ```
-      Running ‘testthat.R’/Library/Frameworks/R.framework/Resources/bin/BATCH: line 60: 36511 Segmentation fault: 11  ${R_HOME}/bin/R -f ${in} ${opts} ${R_BATCH_OPTIONS} > ${out} 2>&1
+      Running ‘testthat.R’/Library/Frameworks/R.framework/Resources/bin/BATCH: line 60: 85292 Segmentation fault: 11  ${R_HOME}/bin/R -f ${in} ${opts} ${R_BATCH_OPTIONS} > ${out} 2>&1
     
      ERROR
     Running the tests in ‘tests/testthat.R’ failed.

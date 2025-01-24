@@ -11,7 +11,7 @@ stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://
 [![Codecov test
 coverage](https://codecov.io/gh/poissonconsulting/tidyplus/graph/badge.svg)](https://app.codecov.io/gh/poissonconsulting/tidyplus)
 [![License:
-MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit/)
+MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/license/mit)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/tidyplus)](https://cran.r-project.org/package=tidyplus)
 <!-- badges: end -->

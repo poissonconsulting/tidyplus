@@ -1,5 +1,8 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus (development version)
+
+
 # tidyplus 0.2.0
 
 - Added `error = FALSE` argument to `if_else2()`.

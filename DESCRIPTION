@@ -5,7 +5,9 @@ Authors@R: c(
     person("Joe", "Thorley", , "joe@poissonconsulting.ca", role = "aut",
            comment = c(ORCID = "0000-0002-7683-4592")),
     person("Ayla", "Pearson", , "ayla@poissonconsulting.ca", role = "cre",
-           comment = c(ORCID = "0000-0001-7388-1222")),       
+           comment = c(ORCID = "0000-0001-7388-1222")),
+    person("Duncan", "Kennedy", , "duncan@poissonconsulting.ca", role = "ctb",
+           comment = c(ORCID = "0009-0001-4880-5751")),
     person("Poisson Consulting", role = c("cph", "fnd"))
   )
 Description: Provides functions such as str_crush(), add_missing_column(), 

@@ -42,6 +42,7 @@ add_missing_column <- function(
     return(.data)
   }
   dots <- list(...)
+  dots <- dots[!names(dots) %in% colnames(.data)]
   tibble::add_column(.data, !!!dots,
     .before = .before, .after = .after,
     .name_repair = .name_repair

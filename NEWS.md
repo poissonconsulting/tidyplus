@@ -1,7 +1,8 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# tidyplus (development version)
+# tidyplus 0.2.0.9001
 
+- Fix bug in `add_missing_columns()` where function would error if one column present and one missing.
 
 # tidyplus 0.2.0
 

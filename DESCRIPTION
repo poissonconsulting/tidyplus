@@ -18,7 +18,7 @@ License: MIT + file LICENSE
 URL: https://poissonconsulting.github.io/tidyplus/, https://github.com/poissonconsulting/tidyplus
 BugReports: https://github.com/poissonconsulting/tidyplus/issues
 Depends: 
-    R (>= 3.6)
+    R (>= 4.1.0)
 Imports:
     chk,
     dplyr,

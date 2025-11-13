@@ -36,3 +36,9 @@ test_that("add_missing_column ignores if present", {
 
   expect_identical(add_missing_column(data, x = 2:4), data)
 })
+
+test_that("add_missing_column no problem with existing and new column", {
+  data <- tibble::tibble(totalAssets = c(1,2))
+
+  expect_identical(add_missing_column(data, totalAssets = NA_real_, other = 1), tibble::tibble(totalAssets = c(1,2), other = c(1, 1)))
+})

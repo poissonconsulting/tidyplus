@@ -15,7 +15,7 @@ A character vector the same length as \code{string}.
 }
 \description{
 \code{str_crush()}, which removes all whitespace from a string,
-is the logical extension to \code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_trim]{stringr::str_squish()}}.
+is the logical extension to \code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_squish]{stringr::str_squish()}}.
 }
 \details{
 \code{str_crush()} is considered \href{https://github.com/tidyverse/stringr/pull/338}{too specialized} to be part of stringr.
@@ -24,5 +24,5 @@ is the logical extension to \code{\link[stringr:str_trim]{stringr::str_trim()}} 
 str_crush("  String with trailing,  middle, and leading white space\t")
 }
 \seealso{
-\code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_trim]{stringr::str_squish()}}
+\code{\link[stringr:str_trim]{stringr::str_trim()}} and \code{\link[stringr:str_squish]{stringr::str_squish()}}
 }

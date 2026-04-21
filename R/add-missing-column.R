@@ -27,8 +27,9 @@
 #' # add_missing_column silently ignores
 #' add_missing_column(data, x = 4:6)
 add_missing_column <- function(
-    .data, ..., .before = NULL, .after = NULL,
-    .name_repair = c("check_unique", "unique", "universal", "minimal")) {
+  .data, ..., .before = NULL, .after = NULL,
+  .name_repair = c("check_unique", "unique", "universal", "minimal")
+) {
   if (!is.data.frame(.data)) {
     stop("add_column(.data = 'must be a data frame')")
   }

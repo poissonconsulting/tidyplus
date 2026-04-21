@@ -23,7 +23,7 @@ String replace multiple strings in a vector.
 \details{
 \code{str_replace_vec()} is a vectorized form of \code{\link[stringr:str_replace]{stringr::str_replace()}}.
 
-This is different from passing a named vector to \code{\link[stringr:str_replace]{stringr::str_replace_all}},
+This is different from passing a named vector to \code{\link[stringr:str_replace_all]{stringr::str_replace_all}},
 which performs multiple replacements but to all pattern matches in a string.
 }
 \examples{
@@ -31,5 +31,5 @@ fruits <- c("two apples", "nine pears")
 str_replace_vec(fruits, c("two" = "three", "nine" = "ten"))
 }
 \seealso{
-\code{\link[stringr:str_replace]{stringr::str_replace()}} and \code{\link[stringr:str_replace]{stringr::str_replace_all()}}
+\code{\link[stringr:str_replace]{stringr::str_replace()}} and \code{\link[stringr:str_replace_all]{stringr::str_replace_all()}}
 }

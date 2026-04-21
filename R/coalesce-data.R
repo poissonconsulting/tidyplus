@@ -36,7 +36,7 @@ coalesce_data <- function(x, coalesce = list(), quiet = FALSE) {
   chk_all(coalesce, chk_character)
   chk_all(coalesce, check_dim, values = TRUE)
   chk_all(coalesce, chk_not_any_na)
-  
+
   sf <- vld_s3_class(x, "sf")
 
   if (sf) {

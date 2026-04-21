@@ -18,9 +18,8 @@ str_to_snake_case <- function(x) {
   snake_case_string <- trimws(x)
   snake_case_string <- gsub("[^A-Za-z0-9_ ]", "", snake_case_string)
   snake_case_string <- gsub("\\s+", " ", snake_case_string)
-  snake_case_string <- gsub(" ", "_", tolower(gsub("(.)([A-Z])", "\\1_\\2", snake_case_string)))
+  snake_case_string <- gsub(" ", "_", tolower(gsub("([a-z])([A-Z])", "\\1_\\2", snake_case_string)))
   snake_case_string <- gsub("_+", "_", snake_case_string)
-  snake_case_string <- gsub("_$", "", snake_case_string)
-  snake_case_string <- gsub("^_", "", snake_case_string)
+  snake_case_string <- gsub("^_|_$", "", snake_case_string)
   snake_case_string
 }

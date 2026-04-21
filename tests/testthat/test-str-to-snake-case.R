@@ -35,7 +35,13 @@ test_that("can input a multiple strings", {
 })
 
 test_that("removes punctuation followed by spaces", {
-  input <- "Removes @ Punctuation / and +spaces_ _"
+  input <- "Removes @ Punctuation / and +spaces_ "
   output <- str_to_snake_case(input)
   expect_equal(output, "removes_punctuation_and_spaces")
+})
+
+test_that("converts acronyms to snakecase without _", {
+  input <- "XYZ"
+  output <- str_to_snake_case(input)
+  expect_equal(output, "xyz")
 })

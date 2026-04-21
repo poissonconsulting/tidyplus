@@ -31,5 +31,5 @@ try(only(c(1, NA)))
 try(only(c(1, 2)))
 }
 \seealso{
-\code{\link[dplyr:nth]{dplyr::first()}}
+\code{\link[dplyr:first]{dplyr::first()}}
 }

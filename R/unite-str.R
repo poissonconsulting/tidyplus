@@ -18,7 +18,7 @@
 #'
 #' unite_str(data, "new", x, y, remove = FALSE)
 unite_str <- function(data, col, ..., sep = ". ", remove = TRUE) {
-  col <- rlang::ensym(col) 
+  col <- rlang::ensym(col)
   if (rlang::dots_n(...) == 0) {
     from_vars <- rlang::set_names(seq_along(data), names(data))
   } else {

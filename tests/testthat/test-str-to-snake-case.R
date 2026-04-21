@@ -33,3 +33,9 @@ test_that("can input a multiple strings", {
   output <- str_to_snake_case(input)
   expect_equal(output, c("list_of_strings", "strings_in_a_list", "many_strings_in_a_list"))
 })
+
+test_that("removes punctuation followed by spaces", {
+  input <- "Removes @ Punctuation / and +spaces_ _"
+  output <- str_to_snake_case(input)
+  expect_equal(output, "removes_punctuation_and_spaces")
+})

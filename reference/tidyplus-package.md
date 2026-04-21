@@ -22,6 +22,9 @@ Useful links:
 
 Authors:
 
+- Ayla Pearson <ayla@poissonconsulting.ca>
+  ([ORCID](https://orcid.org/0000-0001-7388-1222))
+
 - Joe Thorley <joe@poissonconsulting.ca>
   ([ORCID](https://orcid.org/0000-0002-7683-4592))
 

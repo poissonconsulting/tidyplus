@@ -1,5 +1,9 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus 0.2.0.9002
+
+- Fix bug in `str_to_snakecase()` so only a single underscore is added between words (#35).
+
 # tidyplus 0.2.0.9001
 
 - Fix bug in `add_missing_columns()` where function would error if one column present and one missing.

@@ -1,5 +1,11 @@
 # Changelog
 
+## tidyplus 0.2.0.9002
+
+- Fix bug in `str_to_snakecase()` so only a single underscore is added
+  between words
+  ([\#35](https://github.com/poissonconsulting/tidyplus/issues/35)).
+
 ## tidyplus 0.2.0.9001
 
 - Fix bug in `add_missing_columns()` where function would error if one

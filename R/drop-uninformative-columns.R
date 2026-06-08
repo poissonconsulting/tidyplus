@@ -21,11 +21,11 @@ drop_uninformative_columns <- function(data, na_distinct = TRUE) {
   chk_data(data)
   chk_flag(na_distinct)
   if (nrow(data)) {
-    informative <- informative_na_distinct
+    uninformative <- uninformative_na_distinct
     if (!na_distinct) {
-      informative <- informative_na_not_distinct
+      uninformative <- uninformative_na_not_distinct
     }
-    data <- dplyr::select(data, !where(informative))
+    data <- dplyr::select(data, !where(uninformative))
   }
   if (!ncol(data)) {
     data <- dplyr::slice(data, integer(0))

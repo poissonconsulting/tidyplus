@@ -89,12 +89,12 @@ test_that("handles data set with no duplicates", {
 })
 
 test_that("errors when input argument is not a data.frame", {
-  expect_error(duplicates("a"), "`.data` must be a data.frame.")
-  expect_error(duplicates(1), "`.data` must be a data.frame.")
-  expect_error(duplicates(1L), "`.data` must be a data.frame.")
-  expect_error(duplicates(TRUE), "`.data` must be a data.frame.")
-  expect_error(duplicates(NULL), "`.data` must be a data.frame.")
-  expect_error(duplicates(NA), "`.data` must be a data.frame.")
+  expect_error(duplicates("a"), "must be a data.frame")
+  expect_error(duplicates(1), "must be a data.frame")
+  expect_error(duplicates(1L), "must be a data.frame")
+  expect_error(duplicates(TRUE), "must be a data.frame")
+  expect_error(duplicates(NULL), "must be a data.frame")
+  expect_error(duplicates(NA), "must be a data.frame")
 })
 
 test_that("preserves groups", {

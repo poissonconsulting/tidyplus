@@ -20,6 +20,7 @@ You can install the development version of `tidyplus` from
 [GitHub](https://github.com/poissonconsulting/tidyplus) with:
 
 ``` r
+
 # install.packages("devtools")
 devtools::install_github("poissonconsulting/tidyplus")
 ```

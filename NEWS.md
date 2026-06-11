@@ -1,5 +1,13 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# tidyplus 0.2.0.9003 (2026-06-11)
+
+- Updating docs (#42).
+- Fix `(un)informative` in internal functions (#40).
+- Update duplicates() error expectations for chk message change (#39).
+- Add/correct author ORCID(s) in DESCRIPTION (#37)
+- Add CODEOWNERS assigning @aylapear (#36)
+
 # tidyplus 0.2.0.9002
 
 - Fix bug in `str_to_snakecase()` so only a single underscore is added between words (#35).

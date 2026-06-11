@@ -1,5 +1,18 @@
 # Changelog
 
+## tidyplus 0.2.0.9003 (2026-06-11)
+
+- Updating docs
+  ([\#42](https://github.com/poissonconsulting/tidyplus/issues/42)).
+- Fix `(un)informative` in internal functions
+  ([\#40](https://github.com/poissonconsulting/tidyplus/issues/40)).
+- Update duplicates() error expectations for chk message change
+  ([\#39](https://github.com/poissonconsulting/tidyplus/issues/39)).
+- Add/correct author ORCID(s) in DESCRIPTION
+  ([\#37](https://github.com/poissonconsulting/tidyplus/issues/37))
+- Add CODEOWNERS assigning [@aylapear](https://github.com/aylapear)
+  ([\#36](https://github.com/poissonconsulting/tidyplus/issues/36))
+
 ## tidyplus 0.2.0.9002
 
 - Fix bug in `str_to_snakecase()` so only a single underscore is added

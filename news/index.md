@@ -1,5 +1,10 @@
 # Changelog
 
+## tidyplus 0.2.0.9004 (2026-06-18)
+
+- Add fledge-bump workflow
+- Add fledge-tag-on-merge workflow
+
 ## tidyplus 0.2.0.9003 (2026-06-11)
 
 - Updating docs

@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
+# tidyplus 0.2.0.9005 (2026-06-23)
+
+- Same as previous version.
+
+
 # tidyplus 0.2.0.9004 (2026-06-18)
 
 * Add fledge-bump workflow

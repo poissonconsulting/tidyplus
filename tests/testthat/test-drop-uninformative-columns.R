@@ -25,7 +25,10 @@ test_that("drop_uninformative_columns works 2 save rows", {
 
 test_that("drop_uninformative_columns works 2 save rows but drop", {
   data <- data.frame(x = c(1, 1), y = c(NA, NA), a = c(1, NA))
-  expect_equal(drop_uninformative_columns(data, na_distinct = FALSE), data.frame())
+  expect_equal(
+    drop_uninformative_columns(data, na_distinct = FALSE),
+    data.frame()
+  )
 })
 
 test_that("drop_uninformative_columns preserves tibble", {
@@ -34,6 +37,15 @@ test_that("drop_uninformative_columns preserves tibble", {
 })
 
 test_that("drop_uninformative_columns preserves col order", {
-  data <- tibble::tibble(z = c(1, 2), x = c(1, 1), y = c(NA, NA), a = c(1, NA), b = c(3, 4))
-  expect_equal(drop_uninformative_columns(data), tibble::tibble(z = c(1, 2), a = c(1, NA), b = c(3, 4)))
+  data <- tibble::tibble(
+    z = c(1, 2),
+    x = c(1, 1),
+    y = c(NA, NA),
+    a = c(1, NA),
+    b = c(3, 4)
+  )
+  expect_equal(
+    drop_uninformative_columns(data),
+    tibble::tibble(z = c(1, 2), a = c(1, NA), b = c(3, 4))
+  )
 })

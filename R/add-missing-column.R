@@ -27,7 +27,10 @@
 #' # add_missing_column silently ignores
 #' add_missing_column(data, x = 4:6)
 add_missing_column <- function(
-  .data, ..., .before = NULL, .after = NULL,
+  .data,
+  ...,
+  .before = NULL,
+  .after = NULL,
   .name_repair = c("check_unique", "unique", "universal", "minimal")
 ) {
   if (!is.data.frame(.data)) {
@@ -44,8 +47,11 @@ add_missing_column <- function(
   }
   dots <- list(...)
   dots <- dots[!names(dots) %in% colnames(.data)]
-  tibble::add_column(.data, !!!dots,
-    .before = .before, .after = .after,
+  tibble::add_column(
+    .data,
+    !!!dots,
+    .before = .before,
+    .after = .after,
     .name_repair = .name_repair
   )
 }

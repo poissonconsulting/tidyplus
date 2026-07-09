@@ -25,12 +25,16 @@
 collapse_comments <- function(...) {
   x <- c(...)
   x <- as.character(x)
-  if (length(x) == 0) return(character(0))
+  if (length(x) == 0) {
+    return(character(0))
+  }
   x <- x[!is.na(x)]
   x <- stringr::str_replace(x, "(\\.\\s*)+$", "")
   x <- stringr::str_squish(x)
   x <- x[nchar(x) > 0]
-  if (length(x) == 0) return("")
+  if (length(x) == 0) {
+    return("")
+  }
   sep <- ". "
   x <- paste(x, sep = sep, collapse = sep)
   paste(x, "", sep = ".")

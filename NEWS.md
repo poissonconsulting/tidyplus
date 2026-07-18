@@ -1,33 +1,12 @@
 <!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
 
-# tidyplus 0.2.0.9005 (2026-06-23)
+# tidyplus 0.2.1 (2026-07-18)
 
-- Same as previous version.
-
-
-# tidyplus 0.2.0.9004 (2026-06-18)
-
-* Add fledge-bump workflow
-* Add fledge-tag-on-merge workflow
-
-
-<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
-
-# tidyplus 0.2.0.9003 (2026-06-11)
-
-- Updating docs (#42).
-- Fix `(un)informative` in internal functions (#40).
-- Update duplicates() error expectations for chk message change (#39).
-- Add/correct author ORCID(s) in DESCRIPTION (#37)
-- Add CODEOWNERS assigning @aylapear (#36)
-
-# tidyplus 0.2.0.9002
-
-- Fix bug in `str_to_snakecase()` so only a single underscore is added between words (#35).
-
-# tidyplus 0.2.0.9001
-
-- Fix bug in `add_missing_columns()` where function would error if one column present and one missing.
+- Fixed bug in `add_missing_column()` where the function would error if one column was present and one was missing.
+- Fixed bug in `str_to_snake_case()` so only a single underscore is added between words (#35).
+- Updated documentation (#42).
+- Added/corrected author ORCID(s) in DESCRIPTION (#37).
+- Internal changes (#36, #39, #40).
 
 # tidyplus 0.2.0
 

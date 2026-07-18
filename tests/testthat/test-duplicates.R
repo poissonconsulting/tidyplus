@@ -83,9 +83,18 @@ test_that("handles columns with missing values", {
 
 test_that("handles data set with no duplicates", {
   data <- tibble::tibble(x = c(1, 2, NA), z = 1:3)
-  expect_identical(duplicates(data), tibble::tibble(x = double(), z = integer()))
-  expect_identical(duplicates(data, x), tibble::tibble(x = double(), z = integer()))
-  expect_identical(duplicates(data, x, .keep_all = FALSE), tibble::tibble(x = double()))
+  expect_identical(
+    duplicates(data),
+    tibble::tibble(x = double(), z = integer())
+  )
+  expect_identical(
+    duplicates(data, x),
+    tibble::tibble(x = double(), z = integer())
+  )
+  expect_identical(
+    duplicates(data, x, .keep_all = FALSE),
+    tibble::tibble(x = double())
+  )
 })
 
 test_that("errors when input argument is not a data.frame", {
@@ -157,7 +166,11 @@ test_that("preserves single active geometry column called map", {
     a = c("green", "green", "blue", "blue"),
     b = c("white", "white", "white", "white")
   )
-  data_dup <- sf::st_as_sf(data_dup, coords = c("X", "Y"), sf_column_name = "map")
+  data_dup <- sf::st_as_sf(
+    data_dup,
+    coords = c("X", "Y"),
+    sf_column_name = "map"
+  )
 
   expect_identical(data_dup, data)
 })
@@ -187,7 +200,11 @@ test_that("deals with one active geometry column and one inactive geometry colum
   )
   data_dup <- sf::st_as_sf(data_dup, coords = c("X", "Y"))
   data_dup <- tibble::as_tibble(data_dup)
-  data_dup <- sf::st_as_sf(data_dup, coords = c("I", "J"), sf_column_name = "map")
+  data_dup <- sf::st_as_sf(
+    data_dup,
+    coords = c("I", "J"),
+    sf_column_name = "map"
+  )
 
   expect_identical(data_dup, data)
 })

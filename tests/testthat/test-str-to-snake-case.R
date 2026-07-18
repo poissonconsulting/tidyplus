@@ -31,7 +31,10 @@ test_that("removes trailing and starting underscores", {
 test_that("can input a multiple strings", {
   input <- c("list of strings", "strings in a list", "many strings in a list")
   output <- str_to_snake_case(input)
-  expect_equal(output, c("list_of_strings", "strings_in_a_list", "many_strings_in_a_list"))
+  expect_equal(
+    output,
+    c("list_of_strings", "strings_in_a_list", "many_strings_in_a_list")
+  )
 })
 
 test_that("removes punctuation followed by spaces", {

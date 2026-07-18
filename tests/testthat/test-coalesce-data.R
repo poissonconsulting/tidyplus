@@ -101,12 +101,14 @@ test_that("coalesce_data handles two coalesce values", {
       expect_identical(
         coalesce_data(
           data,
-          coalesce = coalesce, quiet = FALSE
+          coalesce = coalesce,
+          quiet = FALSE
         ),
         new
       ),
       "Coalesced 'z' from: 'y' and 'x'"
-    ), "Coalesced 'd' from: 'z' and 'a'"
+    ),
+    "Coalesced 'd' from: 'z' and 'a'"
   )
 })
 
@@ -118,7 +120,8 @@ test_that("coalesce_data quiet = FALSE", {
     expect_message(
       coalesce_data(
         data,
-        coalesce = coalesce, quiet = FALSE
+        coalesce = coalesce,
+        quiet = FALSE
       ),
       "Coalesced 'z' from: 'y' and 'x'"
     ),

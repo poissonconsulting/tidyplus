@@ -28,8 +28,12 @@ coalesce_data <- function(x, coalesce = list(), quiet = FALSE) {
   chk_list(coalesce)
   chk_flag(quiet)
 
-  if (!length(coalesce)) return(x)
-  if (!ncol(x)) return(x)
+  if (!length(coalesce)) {
+    return(x)
+  }
+  if (!ncol(x)) {
+    return(x)
+  }
 
   chk_named(coalesce)
   chk_unique(names(coalesce))

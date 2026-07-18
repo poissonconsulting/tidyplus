@@ -63,7 +63,10 @@ test_that("unite_str missing values", {
 })
 
 test_that("unite_str matches same", {
-  data <- tibble::tibble(comment = c("", "", NA), comment.x = c("text", NA, "text3"))
+  data <- tibble::tibble(
+    comment = c("", "", NA),
+    comment.x = c("text", NA, "text3")
+  )
   data <- unite_str(data, "comment", tidyr::matches("comment"))
   expect_s3_class(data, "tbl_df")
   expect_identical(colnames(data), "comment")
@@ -73,10 +76,10 @@ test_that("unite_str matches same", {
 test_that("unite_str matches new sf as string", {
   skip_if_not_installed("sf")
   data <- dplyr::tribble(
-    ~comment, ~comment.x, ~x, ~y,
-    "text", NA, 0, 0,
-    NA, "", 1, 0,
-    "", "text3", 2, 0
+    ~comment , ~comment.x , ~x , ~y ,
+    "text"   , NA         ,  0 ,  0 ,
+    NA       , ""         ,  1 ,  0 ,
+    ""       , "text3"    ,  2 ,  0
   )
 
   data <- sf::st_as_sf(data, coords = c("x", "y"), dim = "XY")

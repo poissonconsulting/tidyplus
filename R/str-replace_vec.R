@@ -20,14 +20,20 @@ str_replace_vec <- function(string, replace) {
   chk_character(replace)
   chk_named(replace)
 
-  if (!length(replace)) return(string)
+  if (!length(replace)) {
+    return(string)
+  }
 
   pattern <- names(replace)
 
   n <- length(replace)
 
   for (i in seq_len(n)) {
-    string <- stringr::str_replace(string, pattern = pattern[i], replacement = replace[i])
+    string <- stringr::str_replace(
+      string,
+      pattern = pattern[i],
+      replacement = replace[i]
+    )
   }
   string
 }

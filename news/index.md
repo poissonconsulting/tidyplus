@@ -1,37 +1,23 @@
 # Changelog
 
-## tidyplus 0.2.0.9005 (2026-06-23)
+## tidyplus 0.2.1 (2026-07-18)
 
-- Same as previous version.
-
-## tidyplus 0.2.0.9004 (2026-06-18)
-
-- Add fledge-bump workflow
-- Add fledge-tag-on-merge workflow
-
-## tidyplus 0.2.0.9003 (2026-06-11)
-
-- Updating docs
-  ([\#42](https://github.com/poissonconsulting/tidyplus/issues/42)).
-- Fix `(un)informative` in internal functions
-  ([\#40](https://github.com/poissonconsulting/tidyplus/issues/40)).
-- Update duplicates() error expectations for chk message change
-  ([\#39](https://github.com/poissonconsulting/tidyplus/issues/39)).
-- Add/correct author ORCID(s) in DESCRIPTION
-  ([\#37](https://github.com/poissonconsulting/tidyplus/issues/37))
-- Add CODEOWNERS assigning [@aylapear](https://github.com/aylapear)
-  ([\#36](https://github.com/poissonconsulting/tidyplus/issues/36))
-
-## tidyplus 0.2.0.9002
-
-- Fix bug in `str_to_snakecase()` so only a single underscore is added
-  between words
+- Fixed bug in
+  [`add_missing_column()`](https://poissonconsulting.github.io/tidyplus/reference/add_missing_column.md)
+  where the function would error if one column was present and one was
+  missing.
+- Fixed bug in
+  [`str_to_snake_case()`](https://poissonconsulting.github.io/tidyplus/reference/str_to_snake_case.md)
+  so only a single underscore is added between words
   ([\#35](https://github.com/poissonconsulting/tidyplus/issues/35)).
-
-## tidyplus 0.2.0.9001
-
-- Fix bug in `add_missing_columns()` where function would error if one
-  column present and one missing.
+- Updated documentation
+  ([\#42](https://github.com/poissonconsulting/tidyplus/issues/42)).
+- Added/corrected author ORCID(s) in DESCRIPTION
+  ([\#37](https://github.com/poissonconsulting/tidyplus/issues/37)).
+- Internal changes
+  ([\#36](https://github.com/poissonconsulting/tidyplus/issues/36),
+  [\#39](https://github.com/poissonconsulting/tidyplus/issues/39),
+  [\#40](https://github.com/poissonconsulting/tidyplus/issues/40)).
 
 ## tidyplus 0.2.0
 

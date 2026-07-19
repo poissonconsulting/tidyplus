@@ -1,6 +1,12 @@
 # Changelog
 
+## tidyplus 0.2.1.9000 (2026-07-19)
+
+- Same as previous version.
+
 ## tidyplus 0.2.1 (2026-07-18)
+
+CRAN release: 2026-07-18
 
 - Fixed bug in
   [`add_missing_column()`](https://poissonconsulting.github.io/tidyplus/reference/add_missing_column.md)

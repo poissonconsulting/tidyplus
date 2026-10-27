@@ -23,13 +23,13 @@ Source:
 [`DESCRIPTION`](https://github.com/poissonconsulting/tidyplus/blob/main/DESCRIPTION)
 
 Thorley J, Pearson A (2026). *tidyplus: Additional 'tidyverse'
-Functions*. R package version 0.2.1.9000,
+Functions*. R package version 0.2.1.9001,
 <https://poissonconsulting.github.io/tidyplus/>.
 
     @Manual{,
       title = {tidyplus: Additional 'tidyverse' Functions},
       author = {Joe Thorley and Ayla Pearson},
       year = {2026},
-      note = {R package version 0.2.1.9000},
+      note = {R package version 0.2.1.9001},
       url = {https://poissonconsulting.github.io/tidyplus/},
     }

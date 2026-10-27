@@ -1,5 +1,10 @@
 # Changelog
 
+## tidyplus 0.2.1.9001 (2026-10-27)
+
+- Standardize CI (tier: cran) - update fledge system
+  ([\#55](https://github.com/poissonconsulting/tidyplus/issues/55)).
+
 ## tidyplus 0.2.1.9000 (2026-07-19)
 
 - Same as previous version.

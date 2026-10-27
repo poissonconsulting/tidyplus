@@ -1,4 +1,9 @@
-<!-- NEWS.md is maintained by https://cynkra.github.io/fledge, do not edit -->
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# tidyplus 0.2.1.9001 (2026-10-27)
+
+- Standardize CI (tier: cran) - update fledge system (#55).
+
 
 # tidyplus 0.2.1.9000 (2026-07-19)
 
